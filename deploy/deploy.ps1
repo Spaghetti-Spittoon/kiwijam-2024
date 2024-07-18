@@ -28,7 +28,7 @@ bunnydeploy deploy --storagekey $storagekey --storagezone $storagezonename ./bui
 Write-Host "purging all files from Bunny Endpoints..."
     
 # Purge CDN endpoint
-bunnydeploy -ArgumentsList purge --accesskey $accesskey
+bunnydeploy purge --accesskey $accesskey
 
 # Pause the script execution to view the output
 Read-Host -Prompt "Deployment complete. Press Enter to continue"

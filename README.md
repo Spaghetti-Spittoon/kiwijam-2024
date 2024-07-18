@@ -25,6 +25,8 @@ Submission for the KiwiJam Auckland Hackathon 2024
 
 # Deploying the project
 
+- Make a folder in the root called `build`.
+
 - Download and install [bunnydeploy.exe](https://github.com/DoubleCouponDay/bunny-deploy/releases/tag/1.0.0). Add it to your PATH environment variable.
 
 - Create a [Bunny CDN](https://bunny.net/) and Bunny CDN Storage Zone.
