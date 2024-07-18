@@ -7,6 +7,8 @@ Submission for the KiwiJam Auckland Hackathon 2024
 
 - Create a symlink to the godot3.6.beta4.mono.exe and add its absolute path to your PATH environment variable.
 
+    mklink godot.exe Godot_v3.6-beta4_mono_win64.exe
+
 - Install the VSC Extension `C# Tools for Godot`.
 
 - Install Powershell and enables scripts to be executed.
