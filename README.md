@@ -11,9 +11,11 @@ Submission for the KiwiJam Auckland Hackathon 2024
 
     mklink godot3.6.4.exe Godot_v3.6-beta4_mono_win64.exe
 
-- Install Powershell and enables scripts to be executed.
+- Install Powershell:
 
     winget install --id Microsoft.Powershell --source winget
+
+- Open a Powershell terminal as Administrator and run the following commands:
 
     Set-ExecutionPolicy Unrestricted -Scope Process
     
