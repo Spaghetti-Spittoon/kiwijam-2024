@@ -23,12 +23,12 @@ if($outcome -ne 0) {
 Write-Host "loading all files to Bunny Storage Zone..."
 
 # Load CDN endpoint
-Start-Process -Wait "bunny-deploy.exe" -ArgumentsList "deploy --storagekey" $storagekey "--storagezone" $storagezonename "./build"
+Start-Process -Wait "bunny-deploy" -ArgumentsList "deploy --storagekey" $storagekey "--storagezone" $storagezonename "./build"
 
 Write-Host "purging all files from Bunny Endpoints..."
     
 # Purge CDN endpoint
-Start-Process -Wait "bunny-deploy.exe" -ArgumentsList "purge --accesskey " $accesskey
+Start-Process -Wait "bunny-deploy" -ArgumentsList "purge --accesskey " $accesskey
 
 # Pause the script execution to view the output
 Read-Host -Prompt "Deployment complete. Press Enter to continue"
