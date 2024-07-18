@@ -27,7 +27,7 @@ Submission for the KiwiJam Auckland Hackathon 2024
 
 - Download and install [bunnydeploy.exe](https://github.com/DoubleCouponDay/bunny-deploy/releases/tag/1.0.0). Add it to your PATH environment variable.
 
-- Create a (Bunny CDN)[https://bunny.net/] and Bunny CDN StorageZone.
+- Create a [Bunny CDN](https://bunny.net/) and Bunny CDN Storage Zone.
 
 - Create two environment variables: `KIWIJAM_BUNNY_ACCESS` containing your Bunny CDN API Key, `KIWIJAM_BUNNY_STORAGE` containing your read/write Bunny CDN StorageZone Password.
 
