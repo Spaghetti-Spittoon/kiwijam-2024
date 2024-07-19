@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wall_Target.obj-fb8596a2a2167de1fe3163a0cacc68dd.mesh"
+
+[deps]
+
+files=[ "res://.import/Wall_Target.obj-fb8596a2a2167de1fe3163a0cacc68dd.mesh" ]
+
+source_file="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/obj/Wall_Target.obj"
+dest_files=[ "res://.import/Wall_Target.obj-fb8596a2a2167de1fe3163a0cacc68dd.mesh", "res://.import/Wall_Target.obj-fb8596a2a2167de1fe3163a0cacc68dd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/target_stand_A.obj-d893d57bcc05faad53c90c7fbea490ea.mesh"
+
+[deps]
+
+files=[ "res://.import/target_stand_A.obj-d893d57bcc05faad53c90c7fbea490ea.mesh" ]
+
+source_file="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/obj/target_stand_A.obj"
+dest_files=[ "res://.import/target_stand_A.obj-d893d57bcc05faad53c90c7fbea490ea.mesh", "res://.import/target_stand_A.obj-d893d57bcc05faad53c90c7fbea490ea.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

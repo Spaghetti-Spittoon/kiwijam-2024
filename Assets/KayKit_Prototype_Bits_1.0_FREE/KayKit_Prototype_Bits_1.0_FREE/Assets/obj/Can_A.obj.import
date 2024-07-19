@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Can_A.obj-e7b771fd532336e07651b962459898be.mesh"
+
+[deps]
+
+files=[ "res://.import/Can_A.obj-e7b771fd532336e07651b962459898be.mesh" ]
+
+source_file="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/obj/Can_A.obj"
+dest_files=[ "res://.import/Can_A.obj-e7b771fd532336e07651b962459898be.mesh", "res://.import/Can_A.obj-e7b771fd532336e07651b962459898be.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
