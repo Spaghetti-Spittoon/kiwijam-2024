@@ -66,8 +66,8 @@ public class Player : KinematicBody
         velocity.y -= _gravity * delta;
 
         var justLanded = IsOnFloor() && snapVector == Vector3.Zero;
-        var isJumpingInAir = !IsOnFloor() && Input.GetActionStrength("jump") > 0;
-        var isJumpingOnFloor = IsOnFloor() && Input.IsActionJustPressed("jump");
+        var isJumpingInAir = !IsOnFloor() && Input.GetActionStrength("forward") > 0;
+        var isJumpingOnFloor = IsOnFloor() && Input.IsActionJustPressed("forward");
 
         if (isJumpingOnFloor)
         {
