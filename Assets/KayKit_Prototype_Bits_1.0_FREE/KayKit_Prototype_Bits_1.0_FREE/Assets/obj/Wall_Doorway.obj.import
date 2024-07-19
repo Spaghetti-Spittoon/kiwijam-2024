@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wall_Doorway.obj-511856c1efb6f4ffa04bc17b4d1ebf0b.mesh"
+
+[deps]
+
+files=[ "res://.import/Wall_Doorway.obj-511856c1efb6f4ffa04bc17b4d1ebf0b.mesh" ]
+
+source_file="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/obj/Wall_Doorway.obj"
+dest_files=[ "res://.import/Wall_Doorway.obj-511856c1efb6f4ffa04bc17b4d1ebf0b.mesh", "res://.import/Wall_Doorway.obj-511856c1efb6f4ffa04bc17b4d1ebf0b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

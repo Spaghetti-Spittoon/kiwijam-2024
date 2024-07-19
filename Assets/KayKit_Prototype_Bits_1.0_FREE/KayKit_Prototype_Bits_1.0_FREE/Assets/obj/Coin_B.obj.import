@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Coin_B.obj-16bdc6180a90c3b7f3403b0fcb59d090.mesh"
+
+[deps]
+
+files=[ "res://.import/Coin_B.obj-16bdc6180a90c3b7f3403b0fcb59d090.mesh" ]
+
+source_file="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/obj/Coin_B.obj"
+dest_files=[ "res://.import/Coin_B.obj-16bdc6180a90c3b7f3403b0fcb59d090.mesh", "res://.import/Coin_B.obj-16bdc6180a90c3b7f3403b0fcb59d090.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
