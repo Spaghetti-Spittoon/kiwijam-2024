@@ -14,27 +14,27 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0814058, 0, -0.202201 )
+transform = Transform( 0.521054, 0, 0, 0, 1, 0, 0, 0, 0.549933, -0.0814058, 0, -0.202201 )
 shape = SubResource( 1 )
 
 [node name="Model" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.517849, 0, 0, 0, 0.51, 0, 0, 0, 0.501222, -0.0744312, -0.525047, -0.195448 )
 
 [node name="RCBody" type="RayCast" parent="Model"]
-transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.671, -0.994169 )
+transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.671, -0.617271 )
 enabled = true
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper1" type="RayCast" parent="Model"]
 transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.624, 0 )
 enabled = true
-cast_to = Vector3( 0, 0, -0.5 )
+cast_to = Vector3( 0, 0, -0.3 )
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper2" type="RayCast" parent="Model"]
 transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.212, 0 )
 enabled = true
-cast_to = Vector3( 0, 0, -0.5 )
+cast_to = Vector3( 0, 0, -0.3 )
 debug_shape_custom_color = Color( 1, 0, 0.211765, 1 )
 
 [node name="SpringArm" type="SpringArm" parent="."]

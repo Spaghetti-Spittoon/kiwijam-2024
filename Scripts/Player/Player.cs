@@ -97,12 +97,9 @@ public class Player : KinematicBody
 
         MoveAndSlideWithSnap(velocity, snapVector, Vector3.Up, true);
 
-        if (velocity.Length() > 0.2f)
-        {
-            var lookDirection = new Vector2(velocity.z, velocity.x);
+        var lookDirection = new Vector2(velocity.z, velocity.x);
 
-            _model.Rotation = new Vector3(_model.Rotation.x, lookDirection.Angle(), _model.Rotation.z);
-        }
+        _model.Rotation = new Vector3(_model.Rotation.x, lookDirection.Angle(), _model.Rotation.z);
     }
 
     private void DetectLedge()
