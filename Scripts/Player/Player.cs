@@ -58,7 +58,7 @@ public class Player : KinematicBody
         var moveDirection = Vector3.Zero;
 
         moveDirection.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
-        moveDirection.z = Input.GetActionStrength("back") - Input.GetActionStrength("forward");
+        //moveDirection.z = Input.GetActionStrength("back") - Input.GetActionStrength("forward");
         moveDirection = moveDirection.Rotated(Vector3.Up, _cameraArm.Rotation.y).Normalized();
 
         velocity.x = moveDirection.x * _speed;

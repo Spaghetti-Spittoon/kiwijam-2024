@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Barrel_A.fbx" type="PackedScene" id=1]
+[ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Dummy_Base.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Player/Player.cs" type="Script" id=2]
 [ext_resource path="res://Scripts/Player/CameraArm.cs" type="Script" id=3]
 
@@ -18,21 +18,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0814058, 0, -0.202201 )
 shape = SubResource( 1 )
 
 [node name="Model" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0744312, 0, -0.195448 )
+transform = Transform( 0.517849, 0, 0, 0, 0.51, 0, 0, 0, 0.501222, -0.0744312, -0.525047, -0.195448 )
 
 [node name="RCBody" type="RayCast" parent="Model"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.837195, -0.991591 )
+transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.67106, -1.97835 )
 enabled = true
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper1" type="RayCast" parent="Model"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161707, 0.813012, -0.021748 )
+transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0.312267, 2.62365, -0.04339 )
 enabled = true
 cast_to = Vector3( 0, 0, -1 )
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper2" type="RayCast" parent="Model"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103748, 0.602982, 0.012494 )
+transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, -0.0200344, 2.21182, 0.0249271 )
 enabled = true
 cast_to = Vector3( 0, 0, -1 )
 debug_shape_custom_color = Color( 1, 0, 0.211765, 1 )
