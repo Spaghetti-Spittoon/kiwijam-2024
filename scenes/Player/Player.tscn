@@ -21,20 +21,20 @@ shape = SubResource( 1 )
 transform = Transform( 0.517849, 0, 0, 0, 0.51, 0, 0, 0, 0.501222, -0.0744312, -0.525047, -0.195448 )
 
 [node name="RCBody" type="RayCast" parent="Model"]
-transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.67106, -1.97835 )
+transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.671, -0.994169 )
 enabled = true
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper1" type="RayCast" parent="Model"]
-transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0.312267, 2.62365, -0.04339 )
+transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.624, 0 )
 enabled = true
-cast_to = Vector3( 0, 0, -1 )
+cast_to = Vector3( 0, 0, -0.5 )
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper2" type="RayCast" parent="Model"]
-transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, -0.0200344, 2.21182, 0.0249271 )
+transform = Transform( 1.93107, 0, 0, 0, 1.96079, 0, 0, 0, 1.99513, 0, 2.212, 0 )
 enabled = true
-cast_to = Vector3( 0, 0, -1 )
+cast_to = Vector3( 0, 0, -0.5 )
 debug_shape_custom_color = Color( 1, 0, 0.211765, 1 )
 
 [node name="SpringArm" type="SpringArm" parent="."]
