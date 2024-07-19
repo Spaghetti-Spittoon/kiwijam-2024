@@ -58,8 +58,11 @@ public class Player : KinematicBody
         var moveDirection = Vector3.Zero;
 
         moveDirection.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
-        //moveDirection.z = Input.GetActionStrength("back") - Input.GetActionStrength("forward");
         moveDirection = moveDirection.Rotated(Vector3.Up, _cameraArm.Rotation.y).Normalized();
+
+        RCUpper1.CastTo = new Vector3(0, 0, moveDirection.x);
+        RCUpper2.CastTo = new Vector3(0, 0, moveDirection.x);
+        RCBody.CastTo = new Vector3(0, 0, moveDirection.x);
 
         velocity.x = moveDirection.x * _speed;
         velocity.z = moveDirection.z * _speed;
@@ -94,16 +97,16 @@ public class Player : KinematicBody
 
         MoveAndSlideWithSnap(velocity, snapVector, Vector3.Up, true);
 
-        if (velocity.Length() > 0.2f)
-        {
-            var lookDirection = new Vector2(velocity.z, velocity.x);
+        var lookDirection = new Vector2(velocity.z, velocity.x);
 
-            _model.Rotation = new Vector3(_model.Rotation.x, lookDirection.Angle(), _model.Rotation.z);
-        }
+        _model.Rotation = new Vector3(_model.Rotation.x, lookDirection.Angle(), _model.Rotation.z);
     }
 
     private void DetectLedge()
     {
+        //TODO: See if we want to have ledge climbing
+        return;
+
         if (RCUpper2.IsColliding() && !RCUpper1.IsColliding())
         {
             if (!_isOnLedge)
@@ -127,7 +130,8 @@ public class Player : KinematicBody
     public void DoClimb()
     {
         var transform = GlobalTransform;
-        transform.origin = RCBody.GetCollisionPoint();
+        transform.origin.y += 1.2f;
+        transform.origin.x += 1;
 
         GlobalTransform = transform;
 
