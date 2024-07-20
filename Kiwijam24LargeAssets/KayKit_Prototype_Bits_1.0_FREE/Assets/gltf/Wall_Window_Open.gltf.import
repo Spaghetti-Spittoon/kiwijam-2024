@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/baby_walking.gltf-abf144c1dd5f6830f8da1930f074d44d.scn"
+path="res://.import/Wall_Window_Open.gltf-5c20e2e164a5a5bf29ba4162b4456fd6.scn"
 
 [deps]
 
-source_file="res://Assets/baby_walking.gltf"
-dest_files=[ "res://.import/baby_walking.gltf-abf144c1dd5f6830f8da1930f074d44d.scn" ]
+source_file="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Wall_Window_Open.gltf"
+dest_files=[ "res://.import/Wall_Window_Open.gltf-5c20e2e164a5a5bf29ba4162b4456fd6.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/baby_jumping.gltf-451c430c4af7dd3e2a527c69687d3a0e.scn"
+path="res://.import/Coin_A.gltf-287c47f24a20db6c2f72ff67dabae503.scn"
 
 [deps]
 
-source_file="res://Assets/baby_jumping.gltf"
-dest_files=[ "res://.import/baby_jumping.gltf-451c430c4af7dd3e2a527c69687d3a0e.scn" ]
+source_file="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Coin_A.gltf"
+dest_files=[ "res://.import/Coin_A.gltf-287c47f24a20db6c2f72ff67dabae503.scn" ]
 
 [params]
 

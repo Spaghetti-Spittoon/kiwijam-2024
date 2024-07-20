@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Cube_Prototype_Large_B.gltf" type="PackedScene" id=1]
-[ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Wall_Window_Closed.gltf" type="PackedScene" id=2]
+[ext_resource path="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Cube_Prototype_Large_B.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Wall_Window_Closed.gltf" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Environment/SimpleTable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Environment/Boundary.tscn" type="PackedScene" id=5]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Environment/Level2/SimpleWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Environment/Level2/SimpleWall2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Environment/PathingPlatform.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.04458, 0.529909, 2.03238 )

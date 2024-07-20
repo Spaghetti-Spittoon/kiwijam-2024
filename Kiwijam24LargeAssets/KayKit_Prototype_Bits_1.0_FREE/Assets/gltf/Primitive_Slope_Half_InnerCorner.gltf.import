@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/babyIdling.gltf-2dba0d1d294954a6c8a99afc7f41f916.scn"
+path="res://.import/Primitive_Slope_Half_InnerCorner.gltf-2377ad04733f89ae3c9c40e1e13105bb.scn"
 
 [deps]
 
-source_file="res://Assets/babyIdling.gltf"
-dest_files=[ "res://.import/babyIdling.gltf-2dba0d1d294954a6c8a99afc7f41f916.scn" ]
+source_file="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Primitive_Slope_Half_InnerCorner.gltf"
+dest_files=[ "res://.import/Primitive_Slope_Half_InnerCorner.gltf-2377ad04733f89ae3c9c40e1e13105bb.scn" ]
 
 [params]
 
