@@ -41,7 +41,6 @@ public class LevelsMenu : CanvasLayer
             buttonInstance.PressedTexturePath = $"res://Assets/level{i}.png";
             buttonInstance.Connect(nameof(GridButton.GridButtonReleased), this, nameof(OnLevel_Click));
             grid.AddChild(buttonInstance);
-            buttonInstance.RedrawTextures();
         }
     }
 
