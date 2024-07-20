@@ -12,6 +12,9 @@ public class PathingPlatform : KinematicBody
     [Export]
     private float _Speed = 8f;
 
+    [Export]
+    private float _TimeBetweenPoints = 0f;
+
     private Vector3 endPoint;
     private Vector3 startPoint;
 
@@ -25,6 +28,7 @@ public class PathingPlatform : KinematicBody
     private Vector3 initialPosition;
 
     private Array<Vector3> _targetPoints;
+    private bool moveToNextPoint = true;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -38,6 +42,8 @@ public class PathingPlatform : KinematicBody
 
     public override void _PhysicsProcess(float delta)
     {
+        if (!moveToNextPoint) return;
+
         var movementDirection = Vector3.Zero;
 
         var direction = GlobalPosition.DirectionTo(endPoint);
@@ -49,6 +55,14 @@ public class PathingPlatform : KinematicBody
         if (GlobalPosition.DistanceTo(endPoint) < 0.1)
         {
             CyclePoints();
+
+            if (_TimeBetweenPoints > 0)
+            {
+                moveToNextPoint = false;
+
+                var timer = GetTree().CreateTimer(_TimeBetweenPoints);
+                timer.Connect("timeout", this, nameof(ContinueToNextPoint));
+            }
         }
 
         if (collision != null)
@@ -58,7 +72,15 @@ public class PathingPlatform : KinematicBody
             collider.MoveAndCollide(collision.Remainder);
             collider.ForceUpdateTransform();
 
-            MoveAndCollide(collision.Remainder + (direction * _Speed * delta) * 3, infiniteInertia: true);
+            var additionalVelocity = Vector3.Zero;
+            additionalVelocity.y = direction.y * _Speed * delta * 3f;
+
+            if (_Speed < 6f)
+            {
+                additionalVelocity.y = direction.y * _Speed * delta * 3f;
+            }
+
+            MoveAndCollide(collision.Remainder + additionalVelocity, infiniteInertia: true);
             ForceUpdateTransform();
         }
     }
@@ -101,6 +123,8 @@ public class PathingPlatform : KinematicBody
             currentPointIndex++;
         }
     }
+
+    private void ContinueToNextPoint() => moveToNextPoint = true;
 }
 
 public enum PathingPlatformMode

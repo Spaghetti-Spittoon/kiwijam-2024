@@ -1,20 +1,26 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Environment/SimplePlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Environment/PathingPillar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Floor.gltf" type="PackedScene" id=4]
+[ext_resource path="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Floor.gltf" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Environment/PathingPlatform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Environment/Boundary.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Environment/Bookshelf.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Environment/Wall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Environment/TempTimeBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Environment/SimplePillar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Environment/SimpleTunnel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Environment/SimpleStairs.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Environment/RotatingPlatform.tscn" type="PackedScene" id=13]
+
 
 [sub_resource type="BoxShape" id=1]
 
 [node name="Main" type="Spatial"]
 
 [node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2.13373, 0, 0, 1.61656 )
 
 [node name="Floor" parent="Floor" instance=ExtResource( 4 )]
 transform = Transform( 13.9199, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -27,9 +33,10 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5704, 1.99268, 0 )
 TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 5, 0 ) ]
 _Speed = 5.0
+_TimeBetweenPoints = 1.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7897, 2.232, 0.00624132 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5159, 2.00214, 0 )
 collision_mask = 5
 collision/safe_margin = 0.1
 moving_platform_apply_velocity_on_leave = 1
@@ -42,16 +49,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.949, 5.1006, 0 )
 
 [node name="PathingPillar" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002, 2.966, 0 )
-_Speed = 5.0
 
 [node name="PathingPillar2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.534, 6.138, 0 )
 TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, -5, 0 ) ]
-_Speed = 5.0
 
 [node name="PathingPillar3" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.068, 4.59209, 0 )
 TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 10, 0, 0 ) ]
+_TimeBetweenPoints = 1.0
 
 [node name="Bookshelf" parent="." instance=ExtResource( 7 )]
 transform = Transform( 2.55748, 0, 0, 0, 2.55765, 0, 0, 0, 1, 22.43, 0.48836, 0 )
@@ -63,17 +69,17 @@ transform = Transform( 0.529221, 0, 0, 0, 14.6753, 0, 0, 0, 2.94781, -27.3449, 1
 transform = Transform( 0.280075, 0, 0, 0, -31.9152, 0, 0, 0, 2.58251, 26.7762, 30.1766, -0.0258799 )
 
 [node name="Wall" parent="." instance=ExtResource( 8 )]
-transform = Transform( 18.8552, 0, 0, 0, 8.53725, 0, 0, 0, 1.64935, 0, -5.04085, -2.9105 )
+transform = Transform( 18.8552, 0, 0, 0, 16.727, 0, 0, 0, 1.64935, 0, -11.6276, -2.9105 )
 collision_layer = 0
 collision_mask = 0
 
 [node name="Wall2" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.102011, 0, 0.994783, 0, 9.26814, 0, -4.5888, 0, 0.470564, -27.2291, -5.15982, -0.285932 )
+transform = Transform( 0.102011, 0, 0.994783, 0, 15.8782, 0, -5.31941, 0, 0.545485, -27.2291, -11.7578, 1.64606 )
 collision_layer = 0
 collision_mask = 0
 
 [node name="Wall3" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.469421, 0, -0.92332, 0, 9.08685, 0, 2.5551, 0, 0.730445, 27.0997, -5.1284, -0.247628 )
+transform = Transform( 0.469421, 0, -0.92332, 0, 15.5676, 0, 3.1485, 0, 0.900084, 27.0997, -11.704, 1.48091 )
 collision_layer = 0
 collision_mask = 0
 
@@ -84,31 +90,142 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.598, 11.7098, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.801, 13.766, 0 )
 
 [node name="Windmill1" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 13, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 12, 13, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 5, 0 ), Vector3( -7, 5, 0 ), Vector3( -7, 0, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 5, 0 ), Vector3( -6, 5, 0 ), Vector3( -6, 0, 0 ) ]
 Mode = 1
 
 [node name="Windmill2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 18, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 12, 18, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( -7, 0, 0 ), Vector3( -7, -5, 0 ), Vector3( 0, -5, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( -6, 0, 0 ), Vector3( -6, -5, 0 ), Vector3( 0, -5, 0 ) ]
 Mode = 1
 
 [node name="Windmill3" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 18, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 6, 18, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, -5, 0 ), Vector3( 7, -5, 0 ), Vector3( 7, 0, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, -5, 0 ), Vector3( 6, -5, 0 ), Vector3( 6, 0, 0 ) ]
 Mode = 1
 
 [node name="Windmill4" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 13, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 6, 13, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 7, 0, 0 ), Vector3( 7, 5, 0 ), Vector3( 0, 5, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 6, 0, 0 ), Vector3( 6, 5, 0 ), Vector3( 0, 5, 0 ) ]
 Mode = 1
 
 [node name="TempTimeBox" parent="." instance=ExtResource( 9 )]
-transform = Transform( 2.05954, 0, 0, 0, 2.33786, 0, 0, 0, 3.04656, -4.49783, 13.9049, 0 )
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -4, 14, 0 )
+_flickerTime = 0.6
 
 [node name="SimplePlatform5" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2264, 0 )
+
+[node name="TempTimeBox2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -7, 13, 0 )
+_flickerTime = 0.6
+
+[node name="TempTimeBox3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -10, 14, 0 )
+_flickerTime = 0.6
+
+[node name="TempTimeBox4" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -13, 13, 0 )
+_flickerTime = 0.6
+
+[node name="TempTimeBox5" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -16, 14, 0 )
+_flickerTime = 0.6
+
+[node name="TempTimeBox6" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -19, 15, 0 )
+_flickerTime = 0.6
+
+[node name="SimplePlatform6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.4486, 0, 0, 0, 1, 0, 0, 0, 1, -24.3048, 15.1582, 0 )
+
+[node name="SimplePillar" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.753529, 0.657415, 0, -0.657415, 0.753529, 0, 0, 0, 1, -27.1645, 12.386, 0.0739245 )
+
+[node name="SimpleTunnel" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.6864, 19.4936, 0 )
+
+[node name="SimplePlatform7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.822382, 0.568935, 0, -0.568935, 0.822382, 0, 0, 0, 1, -26.0322, 17.205, 0 )
+
+[node name="SimplePlatform8" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1583, 19.046, 0 )
+
+[node name="SimplePlatform9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.47097, 0, 0, 0, 1, 0, 0, 0, 1, -15.2173, 19.046, 0 )
+
+[node name="SimpleTunnel2" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.7288, 26.4766, 0 )
+
+[node name="SimplePlatform10" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.0801e-07, -1, 0, 1.63689, -2.89564e-08, 0, 0, 0, 1, -10.2229, 23.3158, 0 )
+
+[node name="SimplePlatform11" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.0801e-07, -1, 0, 1.63689, -2.89564e-08, 0, 0, 0, 1, -20.1772, 26.6769, 0 )
+
+[node name="SimplePlatform12" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.63027, 0, 0, 0, 1, 0, 0, 0, 1, -15.889, 29.515, 0 )
+collision_mask = 0
+
+[node name="SimpleStairs" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8062, 19.9742, 0 )
+collision_mask = 0
+
+[node name="SimpleStairs2" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0267, 21.9635, 0 )
+collision_mask = 0
+
+[node name="SimpleTunnel3" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -12.072, 26.4766, 0 )
+collision_mask = 0
+
+[node name="SimplePlatform13" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.02643, 0, 0, 0, 1, 0, 0, 0, 1, -18.1185, 25.9745, 0 )
+
+[node name="PathingPlatform2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.352055, 0, 0, 0, 0.476877, 0, 0, 0, 0.218435, -13.9288, 24.0941, 0 )
+collision_mask = 0
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 3, 0 ) ]
+_Speed = 2.0
+_TimeBetweenPoints = 1.0
+
+[node name="SimplePlatform14" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.02643, 0, 0, 0, 1, 0, 0, 0, 1, -10.7156, 25.9745, 0 )
+
+[node name="SimplePlatform15" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.568285, -0.274763, 0, 0.456291, 0.895758, 0, 0, 0, 1, -7.55989, 26.8863, 0 )
+
+[node name="SimplePlatform16" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.0405, 0, 0, 0, 2.13792, 0, 0, 0, 0.258373, -13.335, 19.944, 0 )
+
+[node name="TempTimeBox7" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -4.5306, 28.5024, 0 )
+_flickerTime = 0.5
+
+[node name="PathingPillar4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.391213, 0, 0, 0, 1, -1.80994, 26.6922, 0.00664806 )
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 2, 0 ) ]
+
+[node name="PathingPillar5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.391213, 0, 0, 0, 1, 0.0332577, 29.6972, 0.00664806 )
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, -5, 0 ) ]
+_Speed = 1.0
+
+[node name="PathingPillar6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 0.391213, 0, 0, 0, 1, 1.85352, 28.2395, 0.00664806 )
+_Speed = 5.0
+
+[node name="RotatingPlatform" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75113, 28.8406, 0 )
+_rotationSpeed = 50.0
+
+[node name="TempTimeBox8" parent="." instance=ExtResource( 9 )]
+transform = Transform( 13.1879, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 13.4569, 28.9253, 0 )
+_flickerTime = 0.5
+
+[node name="SimplePlatform17" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.20032, 0, 0, 0, 1, 0, 0, 0, 1, 22.8523, 28.4307, 0 )

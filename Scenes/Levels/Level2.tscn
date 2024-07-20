@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Cube_Prototype_Large_B.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Kiwijam24LargeAssets/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Wall_Window_Closed.gltf" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Environment/SimpleTable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Environment/Boundary.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Environment/Level2/SimpleDoorway.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Environment/Level2/SimpleWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Environment/Level2/SimpleWall2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Environment/PathingPlatform.tscn" type="PackedScene" id=9]
+
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.04458, 0.529909, 2.03238 )
+
+[node name="Level2" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.43031, 0, 0, 0, 0.549049, 0, 0, 0, 0.707858, 20.8478, 2.1812, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 12.1484, 0, 0, 0, 1, 0, 0, 0, 1.96645, 0, 0, 0 )
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 0.940823, 0, 0, 0, 1, 0, 0.492035, 0 )
+shape = SubResource( 1 )
+
+[node name="Cube_Prototype_Large_B" parent="StaticBody" instance=ExtResource( 1 )]
+transform = Transform( 1.02789, 0, 0, 0, 0.24762, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="StaticBody2" type="StaticBody" parent="."]
+transform = Transform( 7.37429, 0, 0, 0, 1, 0, 0, 0, 1.67398, 0, 0, -3.95382 )
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 0.940823, 0, 0, 0, 1, 0, 0.492035, 0 )
+shape = SubResource( 1 )
+
+[node name="Wall_Window_Closed" parent="StaticBody2" instance=ExtResource( 2 )]
+transform = Transform( 1.7808, 0, 0, 0, 6.50393, 0, 0, 0, 1, 0, 0.544951, 0 )
+
+[node name="StaticBody3" type="StaticBody" parent="."]
+transform = Transform( 1.49957, 0, 1.63901, 0, 1, 0, -3.61126, 0, 0.170258, -23.2999, 0, 3.50657 )
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 0.940823, 0, 0, 0, 1, 0, 0.492035, 0 )
+shape = SubResource( 1 )
+
+[node name="Wall_Window_Closed" parent="StaticBody3" instance=ExtResource( 2 )]
+transform = Transform( 1.7808, 0, 0, 0, 6.50393, 0, 0, 0, 1, 0, 0.544951, 0 )
+
+[node name="StaticBody4" type="StaticBody" parent="."]
+transform = Transform( 2.18241, 0, -1.04711, 0, 1, 0, 3.24453, 0, 1.27235, 27.2355, 0, 6.81266 )
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody4"]
+transform = Transform( 1, 0, 0, 0, 0.940823, 0, 0, 0, 1, 0, 0.492035, 0 )
+shape = SubResource( 1 )
+
+[node name="Wall_Window_Closed" parent="StaticBody4" instance=ExtResource( 2 )]
+transform = Transform( 1.7808, 0, 0, 0, 6.50393, 0, 0, 0, 1, 0, 0.544951, 0 )
+
+[node name="SimpleTable" parent="." instance=ExtResource( 4 )]
+transform = Transform( 5.85932, 0, 0, 0, 6.8564, 0, 0, 0, 2.41622, -15.8599, 0.946614, 0 )
+collision_mask = 2
+
+[node name="Boundary" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 21.4138, 0, 0, 0, 7.96299, -22.0909, 9.24424, 0 )
+collision_mask = 2
+
+[node name="Boundary2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 21.4138, 0, 0, 0, 7.96299, 21.6254, 9.24424, 0 )
+collision_mask = 2
+
+[node name="SimpleDoorway" parent="." instance=ExtResource( 6 )]
+transform = Transform( -8.24682e-08, 0, 1, 0, 1.22026, 0, -1.88665, 0, -4.37114e-08, 16.9508, 0, 0 )
+collision_mask = 2
+
+[node name="SimpleDoorway2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1.88665, 0, 0, 0, 1.38717, 0, 0, 0, 1.23032, 20.8345, 0, 3.54343 )
+collision_mask = 2
+
+[node name="SimpleWall" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 6.93354, 0, 0, 0, 1, 19.1226, -4.69122, -1.66902 )
+collision_mask = 2
+
+[node name="SimpleWall2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1.03488, 0, -1.34678, 0, 6.45941, 0, 2.24419, 0, 1.72445, 21.8247, -5.22247, -1.05083 )
+collision_mask = 2
+
+[node name="SimpleWall3" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1.90009, 0, 0, 0, 3.23185, 0, 0, 0, 1, 20.669, 3.5548, 3.45899 )
+collision_mask = 2
+
+[node name="SimpleWall4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 2.17347, 0, 0, 0, 1, 0, 0, 0, 1, 19.9803, 15.6134, 3.44507 )
+collision_mask = 2
+
+[node name="SimpleWall6" parent="." instance=ExtResource( 7 )]
+transform = Transform( 2.26583e-08, 0, -1, 0, 3.23185, 0, 1.90009, 0, 1.19249e-08, 17.0552, 3.3821, -0.0472922 )
+collision_mask = 2
+
+[node name="SimpleWall7" parent="." instance=ExtResource( 8 )]
+transform = Transform( 3.81045, 0, 0, 0, 1, 0, 0, 0, 1, 16.8922, 3.58362, 3.51158 )
+collision_mask = 2
+
+[node name="SimpleWall8" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1.6656e-07, 0, 1, 0, 1, 0, -4.49212, 0, -5.15312e-08, 16.9984, 3.32999, 3.79021 )
+collision_mask = 2
+
+[node name="PathingPlatform" parent="." instance=ExtResource( 9 )]
+transform = Transform( 0.423972, 0, 0, 0, 0.391438, 0, 0, 0, 0.359447, 19.4085, 1.50999, 0 )
+collision_mask = 0
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 16, 0 ), Vector3( -16, 16, 0 ) ]
+_TimeBetweenPoints = 2.0
+
+[node name="SimpleWall5" parent="." instance=ExtResource( 8 )]
+transform = Transform( -9.50055e-08, 0, 1, 0, 1, 0, -2.17347, 0, -4.37114e-08, 17.4044, 15.3506, -1.43882 )
