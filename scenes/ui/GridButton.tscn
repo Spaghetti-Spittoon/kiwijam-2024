@@ -9,8 +9,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer"]
+margin_right = 100.0
+margin_bottom = 50.0
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
