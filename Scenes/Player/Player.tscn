@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Kiwijam24LargeAssets/babyIdling.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Kiwijam24LargeAssets/baby_walking.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Player/Player.cs" type="Script" id=2]
 [ext_resource path="res://Scripts/Player/CameraArm.cs" type="Script" id=3]
 [ext_resource path="res://Kiwijam24LargeAssets/babyIdling.gltf" type="PackedScene" id=4]
-[ext_resource path="res://Kiwijam24LargeAssets/baby_walking.gltf" type="PackedScene" id=5]
+[ext_resource path="res://Kiwijam24LargeAssets/baby_jumping.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CylinderShape" id=1]
 height = 0.970044
@@ -19,26 +19,6 @@ script = ExtResource( 2 )
 transform = Transform( 0.521054, 0, 0, 0, 1, 0, 0, 0, 0.549933, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="ModelWalking" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.510614, 0 )
-
-[node name="RCBody" type="RayCast" parent="ModelWalking"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0744312, 0.837163, -0.504838 )
-enabled = true
-debug_shape_custom_color = Color( 1, 0, 0, 1 )
-
-[node name="RCUpper1" type="RayCast" parent="ModelWalking"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0744312, 0.813192, -0.195448 )
-enabled = true
-cast_to = Vector3( 0, 0, -0.3 )
-debug_shape_custom_color = Color( 1, 0, 0, 1 )
-
-[node name="RCUpper2" type="RayCast" parent="ModelWalking"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0744312, 0.603072, -0.195448 )
-enabled = true
-cast_to = Vector3( 0, 0, -0.3 )
-debug_shape_custom_color = Color( 1, 0, 0.211765, 1 )
-
 [node name="SpringArm" type="SpringArm" parent="."]
 collision_mask = 0
 spring_length = 7.0
@@ -48,7 +28,27 @@ script = ExtResource( 3 )
 [node name="Camera" type="Camera" parent="SpringArm"]
 
 [node name="ModelIdle" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.507519, 0 )
+transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.5, 0 )
 
-[node name="ModelJumping" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.523496, 0 )
+[node name="ModelWalking" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.5, 0 )
+
+[node name="RCBody" type="RayCast" parent="ModelWalking"]
+transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, -0.0235947, -0.245233, -0.160034 )
+enabled = true
+debug_shape_custom_color = Color( 1, 0, 0, 1 )
+
+[node name="RCUpper1" type="RayCast" parent="ModelWalking"]
+transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, -0.0235947, -0.252832, -0.061957 )
+enabled = true
+cast_to = Vector3( 0, 0, -0.3 )
+debug_shape_custom_color = Color( 1, 0, 0, 1 )
+
+[node name="RCUpper2" type="RayCast" parent="ModelWalking"]
+transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, -0.0235947, -0.31944, -0.061957 )
+enabled = true
+cast_to = Vector3( 0, 0, -0.3 )
+debug_shape_custom_color = Color( 1, 0, 0.211765, 1 )
+
+[node name="ModelJumping" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.5, 0 )
