@@ -19,6 +19,7 @@ public class PhotoPiece : Area {
             throw new Exception($"Quadrant value not valid: {Quadrant}");
         }
         bus.EmitSignal(nameof(EventBus.PieceCollected), (PieceQuadrant)Quadrant);
+        QueueFree();
     }
 }
 
