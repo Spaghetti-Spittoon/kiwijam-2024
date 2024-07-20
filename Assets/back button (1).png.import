@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/level one (baby).png-e1434ef949c47630bde62b1eac654528.stex"
+path="res://.import/back button (1).png-2ce898c2e6fab192a866a5a63cd27229.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/level one (baby).png"
-dest_files=[ "res://.import/level one (baby).png-e1434ef949c47630bde62b1eac654528.stex" ]
+source_file="res://Assets/back button (1).png"
+dest_files=[ "res://.import/back button (1).png-2ce898c2e6fab192a866a5a63cd27229.stex" ]
 
 [params]
 
