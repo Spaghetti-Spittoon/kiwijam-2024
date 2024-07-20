@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/level two (teenager) dark.png-0ccf587ed429bbb6a9b05d525627619b.stex"
+path="res://.import/level2 dark.png-3d5b7a1d8863655159ac7e761bc0e4a8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/level two (teenager) dark.png"
-dest_files=[ "res://.import/level two (teenager) dark.png-0ccf587ed429bbb6a9b05d525627619b.stex" ]
+source_file="res://Assets/level2 dark.png"
+dest_files=[ "res://.import/level2 dark.png-3d5b7a1d8863655159ac7e761bc0e4a8.stex" ]
 
 [params]
 
