@@ -41,10 +41,16 @@ public class Player : KinematicBody
         _running = _model.GetNode<AnimationPlayer>("AnimationPlayer");
         _running.CurrentAnimation = "Armature|walking|BaseLayer";
         _running.Play();
+        _running.Connect("animation_finished", this, nameof(OnAnimationFinished));
 
         RCUpper1 = _model.GetNode<RayCast>(nameof(RCUpper1));
         RCUpper2 = _model.GetNode<RayCast>(nameof(RCUpper2));
         RCBody = _model.GetNode<RayCast>(nameof(RCBody));
+    }
+
+    public void OnAnimationFinished(string animationName)
+    {
+        _running.Play();
     }
 
     public override void _Process(float delta)
@@ -59,7 +65,7 @@ public class Player : KinematicBody
         var moveDirection = Vector3.Zero;
 
         moveDirection.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
-        moveDirection = moveDirection.Rotated(Vector3.Up, _cameraArm.Rotation.y).Normalized();
+        //moveDirection = moveDirection.Rotated(Vector3.Up, _cameraArm.Rotation.y).Normalized();
 
         RCUpper1.CastTo = new Vector3(0, 0, moveDirection.x);
         RCUpper2.CastTo = new Vector3(0, 0, moveDirection.x);
@@ -111,6 +117,21 @@ public class Player : KinematicBody
         _model.Rotation = new Vector3(_model.Rotation.x, lookDirection.Angle(), _model.Rotation.z);
 
         directionX = moveDirection.x;
+
+        //AngleArm();
+    }
+
+    private void AngleArm()
+    {
+        var ratio = Mathf.Clamp(velocity.x, -10, 10) / 10;
+
+        var rotationX = 30 * ratio;
+        rotationX = Mathf.Clamp(rotationX, -90, 30);
+
+        //var rotationY = RotationDegrees.y - (inputEvent.Relative.x * _mouseSensitivity);
+        //rotationY = Mathf.Wrap(rotationY, 0, 360);
+
+        _cameraArm.RotationDegrees = new Vector3(_cameraArm.RotationDegrees.x, rotationX, _cameraArm.RotationDegrees.z);
     }
 
     private void DetectLedge()
