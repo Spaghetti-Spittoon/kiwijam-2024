@@ -1,5 +1,3 @@
-using System;
-using System.Data;
 using Godot;
 
 public class MovingPlatform : KinematicBody
@@ -107,5 +105,4 @@ public class MovingPlatform : KinematicBody
 		}
 
 	}
-
 }
