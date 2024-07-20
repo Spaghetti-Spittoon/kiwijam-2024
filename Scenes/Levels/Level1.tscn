@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Environment/SimplePlatform.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Scenes/Environment/SimpleTunnel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Environment/SimpleStairs.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Environment/RotatingPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Environment/PhotoPiece.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Ui/Hud.tscn" type="PackedScene" id=15]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -228,3 +230,8 @@ _flickerTime = 0.5
 
 [node name="SimplePlatform17" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2.20032, 0, 0, 0, 1, 0, 0, 0, 1, 22.8523, 28.4307, 0 )
+
+[node name="PhotoPiece" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.690561, 0.35305, -0.631254, -0.260583, 0.935604, 0.238204, 0.674702, 0, 0.73809, 14.1068, 2.7002, 0 )
+
+[node name="Hud" parent="." instance=ExtResource( 15 )]
