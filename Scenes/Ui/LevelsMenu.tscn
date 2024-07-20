@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/TitleTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Ui/LevelsMenu.cs" type="Script" id=6]
+[ext_resource path="res://Scenes/Ui/GenericButton.tscn" type="PackedScene" id=7]
+
+[node name="LevelsMenu" type="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -48.5
+margin_right = 48.5
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 3
+text = "Levels"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 149.0
+margin_top = 97.0
+margin_right = 249.0
+margin_bottom = 147.0
+columns = 5
+
+[node name="BackButton" parent="." instance=ExtResource( 7 )]
+TexturePath = "res://Assets/back button.png"
+PressedTexturePath = "res://Assets/back button dark.png"
