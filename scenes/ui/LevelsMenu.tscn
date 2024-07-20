@@ -26,4 +26,3 @@ margin_bottom = 147.0
 columns = 5
 
 [node name="BackButton" parent="." instance=ExtResource( 7 )]
-ButtonText = "Back"

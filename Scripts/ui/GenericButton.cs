@@ -17,10 +17,16 @@ public class GenericButton : Node
     public override void _Ready()
     {
         button = GetNode<TextureButton>("CenterContainer/TextureButton");
-        var normalTexture = (Texture)ResourceLoader.Load(TexturePath);
-        var pressedTexture = (Texture)ResourceLoader.Load(PressedTexturePath);
-        button.TextureNormal = normalTexture;
-        button.TexturePressed = pressedTexture;
+
+        if(string.IsNullOrEmpty(TexturePath) == false) {
+            var normalTexture = (Texture)ResourceLoader.Load(TexturePath);
+            button.TextureNormal = normalTexture;
+        }
+
+        if(string.IsNullOrEmpty(TexturePath) == false) {
+            var pressedTexture = (Texture)ResourceLoader.Load(PressedTexturePath);
+            button.TexturePressed = pressedTexture; 
+        }
         button.Connect("button_up", this, nameof(OnButton_Click));
     }
 
