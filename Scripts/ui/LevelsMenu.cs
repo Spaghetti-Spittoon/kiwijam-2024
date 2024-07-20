@@ -5,7 +5,7 @@ public class LevelsMenu : CanvasLayer
 {
     SceneTree tree;
     EventBus bus;
-    TextureButton backButton;
+    GenericButton backButton;
     GridContainer grid;
     Progress progressState;
 
@@ -13,10 +13,10 @@ public class LevelsMenu : CanvasLayer
     {
         tree = GetTree();
         bus = GetNode<EventBus>("/root/EventBus");
-        backButton = GetNode<TextureButton>("BackButton/TextureButton");
+        backButton = GetNode<GenericButton>("BackButton");
         grid = GetNode<GridContainer>("GridContainer");
         progressState = GetNode<Progress>("/root/Progress");
-        backButton.Connect("button_up", this, nameof(OnBackButton_Click));
+        backButton.Connect(nameof(GenericButton.ButtonReleased), this, nameof(OnBackButton_Click));
         bus.Connect(nameof(EventBus.GridButtonReleased), this, nameof(OnLevel_Click));
         AddLevelButtons();
     }
