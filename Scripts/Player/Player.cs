@@ -27,6 +27,8 @@ public class Player : KinematicBody
     private bool _isOnLedge;
     private bool _isClimbingLedge;
 
+    private float directionX;
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -101,12 +103,14 @@ public class Player : KinematicBody
         var lookDirection = new Vector2(velocity.z, velocity.x);
 
         _model.Rotation = new Vector3(_model.Rotation.x, lookDirection.Angle(), _model.Rotation.z);
+
+        directionX = moveDirection.x;
     }
 
     private void DetectLedge()
     {
         //TODO: See if we want to have ledge climbing
-        return;
+        //return;
 
         if (RCUpper2.IsColliding() && !RCUpper1.IsColliding())
         {
@@ -132,7 +136,8 @@ public class Player : KinematicBody
     {
         var transform = GlobalTransform;
         transform.origin.y += 1.2f;
-        transform.origin.x += 1;
+        transform.origin.x += directionX;
+        velocity = Vector3.Zero;
 
         GlobalTransform = transform;
 
