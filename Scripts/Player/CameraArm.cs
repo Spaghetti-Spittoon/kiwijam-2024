@@ -9,6 +9,7 @@ public class CameraArm : SpringArm
     public override void _Ready()
     {
         SetAsToplevel(true);
+
         //Input.MouseMode = Input.MouseModeEnum.Captured;
     }
 
