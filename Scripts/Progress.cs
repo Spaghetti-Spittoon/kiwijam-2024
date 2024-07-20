@@ -1,7 +1,7 @@
 using Godot;
 
 public class Progress : Node {
-    public int LevelAchieved { get; private set; }
+    public int LevelAchieved { get; private set; } = 1;
 
     EventBus bus;
 

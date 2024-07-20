@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class GridButton : CenterContainer
+public class GridButton : Control
 {
     [Export]
     public int GridIndex;

@@ -30,7 +30,7 @@ public class LevelsMenu : CanvasLayer
     }
 
     void AddLevelButtons() {
-        var buttonScene = (PackedScene)ResourceLoader.Load("res://scenes/ui/GenericButton.tscn");
+        var buttonScene = (PackedScene)ResourceLoader.Load("res://scenes/ui/GridButton.tscn");
 
         for(int i = 1; i <= progressState.LevelAchieved; i++) {
             GridButton buttonInstance = buttonScene.Instance<GridButton>();
