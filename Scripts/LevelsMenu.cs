@@ -12,7 +12,7 @@ public class LevelsMenu : CanvasLayer
         tree = GetTree();
         bus = GetNode<EventBus>("/root/EventBus");
         backButton = GetNode<TextureButton>("BackButton/TextureButton");
-        backButton.Connect(nameof(EventBus.MainMenuAppeared), this, nameof(OnBackButton_Click));
+        backButton.Connect("button_up", this, nameof(OnBackButton_Click));
     }
 
     void OnBackButton_Click() {
