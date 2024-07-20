@@ -4,6 +4,8 @@
 **/*.zip
 **/*.tar.gz
 **/*.material
+**/*.7z
+**/*.bin
 
 build/
 
