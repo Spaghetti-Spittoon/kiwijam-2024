@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/buttonplaceholder.png" type="Texture" id=2]
 [ext_resource path="res://Assets/buttonplaceholder_pressed.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/ui/GenericButton.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/Ui/GenericButton.cs" type="Script" id=4]
 
 [node name="GenericButton" type="Control"]
 margin_right = 101.0

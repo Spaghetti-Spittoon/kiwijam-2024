@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/TitleTheme.tres" type="Theme" id=1]
-[ext_resource path="res://Scripts/ui/MainMenu.cs" type="Script" id=5]
-[ext_resource path="res://scenes/ui/GenericButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Ui/MainMenu.cs" type="Script" id=5]
+[ext_resource path="res://Scenes/Ui/GenericButton.tscn" type="PackedScene" id=6]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 5 )

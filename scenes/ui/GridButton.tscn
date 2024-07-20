@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/buttonplaceholder.png" type="Texture" id=1]
 [ext_resource path="res://Assets/buttonplaceholder_pressed.png" type="Texture" id=2]
-[ext_resource path="res://scripts/ui/GridButton.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/Ui/GridButton.cs" type="Script" id=3]
 
 [node name="GridButton" type="Control"]
 anchor_right = 1.0
