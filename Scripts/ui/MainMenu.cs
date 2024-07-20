@@ -5,16 +5,18 @@ public class MainMenu : CanvasLayer
 {
     SceneTree tree;
     EventBus bus;
-    TextureButton levelsButton;
+    GenericButton levelsButton;
+    GenericButton continueButton;
+    Progress progressState;
 
     public override void _Ready()
     {
         tree = GetTree();
-        var toplevelnodes = tree.Root.GetChildren();
         bus = GetNode<EventBus>("/root/EventBus");
-
-        levelsButton = GetNode<TextureButton>("LevelsButton/TextureButton");
-        levelsButton.Connect("button_up", this, nameof(OnLevelsButton_Click));
+        levelsButton = GetNode<GenericButton>("LevelsButton");
+        continueButton = GetNode<GenericButton>("ContinueButton");
+        progressState = GetNode<Progress>("/root/Progress");
+        levelsButton.Connect(nameof(GenericButton.ButtonReleased), this, nameof(OnLevelsButton_Click));
     }
 
     void OnLevelsButton_Click() {
@@ -27,5 +29,13 @@ public class MainMenu : CanvasLayer
 
         //remove the main menu scene
         QueueFree();
-    }    
+    }
+
+    void OnContinueButton_Click() {
+        int achievedLevel = progressState.LevelAchieved;
+        var scenePath = $"res://scenes/levels/Level{achievedLevel}.tscn";
+        Node level = ((PackedScene)ResourceLoader.Load(scenePath)).Instance();
+        tree.Root.AddChild(level);
+        QueueFree();
+    }
 }
