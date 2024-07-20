@@ -15,4 +15,10 @@ public class EventBus : Node {
 
     [Signal]
     public delegate void LevelOneAchieved();
+
+    [Signal]
+    public delegate void PieceCollected();
+
+    [Signal]
+    public delegate void PortalOpen();
 }
