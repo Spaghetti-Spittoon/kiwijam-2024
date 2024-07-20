@@ -19,6 +19,11 @@ config/icon="res://icon.png"
 EventBus="*res://Scripts/EventBus.cs"
 Progress="*res://Scripts/Progress.cs"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [global]
 
 load=false
