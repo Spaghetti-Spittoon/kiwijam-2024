@@ -9,11 +9,7 @@ margin_right = 101.0
 margin_bottom = 52.0
 script = ExtResource( 4 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 100.0
-margin_bottom = 50.0
-
-[node name="TextureButton" type="TextureButton" parent="CenterContainer"]
+[node name="TextureButton" type="TextureButton" parent="."]
 margin_right = 100.0
 margin_bottom = 50.0
 texture_normal = ExtResource( 2 )

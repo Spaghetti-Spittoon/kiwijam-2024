@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class GenericButton : Node
+public class GenericButton : Control
 {
     [Export]
     public string TexturePath;
@@ -16,7 +16,7 @@ public class GenericButton : Node
 
     public override void _Ready()
     {
-        button = GetNode<TextureButton>("CenterContainer/TextureButton");
+        button = GetNode<TextureButton>("TextureButton");
         button.Connect("button_up", this, nameof(OnButton_Click));
         RedrawTextures();
     }

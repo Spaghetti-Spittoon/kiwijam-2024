@@ -7,13 +7,11 @@
 [node name="GridButton" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -920.0
+margin_bottom = -547.0
 script = ExtResource( 3 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="TextureButton" type="TextureButton" parent="CenterContainer"]
+[node name="TextureButton" type="TextureButton" parent="."]
 margin_right = 100.0
 margin_bottom = 50.0
 texture_normal = ExtResource( 1 )
