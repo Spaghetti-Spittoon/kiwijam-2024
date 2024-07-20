@@ -3,12 +3,14 @@ using System;
 
 public class MainMenu : CanvasLayer
 {
+    SceneTree tree;
     EventBus bus;
     TextureButton levelsButton;
 
     public override void _Ready()
     {
-        var toplevelnodes = GetTree().Root.GetChildren();
+        tree = GetTree();
+        var toplevelnodes = tree.Root.GetChildren();
         bus = GetNode<EventBus>("/root/EventBus");
 
         levelsButton = GetNode<TextureButton>("LevelsButton/TextureButton");
@@ -16,6 +18,14 @@ public class MainMenu : CanvasLayer
     }
 
     void OnLevelsButton_Click() {
+        var levelsMenu = (PackedScene)ResourceLoader.Load("res://scenes/LevelsMenu.tscn");
+        var levelsInstance = levelsMenu.Instance();
+
+        //add levels scene
+	    tree.Root.AddChild(levelsInstance);
         bus.EmitSignal(nameof(EventBus.LevelOneSet));
+
+        //remove the main menu scene
+        QueueFree();
     }    
 }

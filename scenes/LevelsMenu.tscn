@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/TitleTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/buttonplaceholder.png" type="Texture" id=2]
 [ext_resource path="res://Assets/TextTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/buttonplaceholder_pressed.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/LevelsMenu.cs" type="Script" id=5]
 
 [node name="LevelsMenu" type="CanvasLayer"]
+script = ExtResource( 5 )
 
 [node name="Title" type="Label" parent="."]
 margin_right = 524.0
