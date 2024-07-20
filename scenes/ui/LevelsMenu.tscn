@@ -26,3 +26,5 @@ margin_bottom = 147.0
 columns = 5
 
 [node name="BackButton" parent="." instance=ExtResource( 7 )]
+TexturePath = "res://Assets/back button.png"
+PressedTexturePath = "res://Assets/back button dark.png"

@@ -17,7 +17,11 @@ public class GenericButton : Node
     public override void _Ready()
     {
         button = GetNode<TextureButton>("CenterContainer/TextureButton");
+        button.Connect("button_up", this, nameof(OnButton_Click));
+        RedrawTextures();
+    }
 
+    public void RedrawTextures() {
         if(string.IsNullOrEmpty(TexturePath) == false) {
             var normalTexture = (Texture)ResourceLoader.Load(TexturePath);
             button.TextureNormal = normalTexture;
@@ -27,7 +31,6 @@ public class GenericButton : Node
             var pressedTexture = (Texture)ResourceLoader.Load(PressedTexturePath);
             button.TexturePressed = pressedTexture; 
         }
-        button.Connect("button_up", this, nameof(OnButton_Click));
     }
 
     void OnButton_Click() {

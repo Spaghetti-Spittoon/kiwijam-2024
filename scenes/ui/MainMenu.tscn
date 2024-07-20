@@ -30,6 +30,8 @@ margin_left = -113.0
 margin_top = 22.0
 margin_right = -12.0
 margin_bottom = 74.0
+TexturePath = "res://Assets/levels button.png"
+PressedTexturePath = "res://Assets/levels button dark.png"
 
 [node name="ContinueButton" parent="." instance=ExtResource( 6 )]
 anchor_left = 0.5
@@ -40,3 +42,5 @@ margin_left = 15.0
 margin_top = 22.0
 margin_right = 116.0
 margin_bottom = 74.0
+TexturePath = "res://Assets/continue button.png"
+PressedTexturePath = "res://Assets/continue button dark.png"
