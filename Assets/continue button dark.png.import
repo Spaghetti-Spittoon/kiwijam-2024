@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/continue button (1).png-a9c3d936ecf40fe1f16cc43ba3503808.stex"
+path="res://.import/continue button dark.png-9ad7473033ceb8a6522601e18887fd39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/continue button (1).png"
-dest_files=[ "res://.import/continue button (1).png-a9c3d936ecf40fe1f16cc43ba3503808.stex" ]
+source_file="res://Assets/continue button dark.png"
+dest_files=[ "res://.import/continue button dark.png-9ad7473033ceb8a6522601e18887fd39.stex" ]
 
 [params]
 

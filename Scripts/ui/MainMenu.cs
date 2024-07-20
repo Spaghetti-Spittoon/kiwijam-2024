@@ -16,6 +16,12 @@ public class MainMenu : CanvasLayer
         levelsButton = GetNode<GenericButton>("LevelsButton");
         continueButton = GetNode<GenericButton>("ContinueButton");
         progressState = GetNode<Progress>("/root/Progress");
+
+        levelsButton.TexturePath = "res://Assets/levels button.png";
+        levelsButton.PressedTexturePath = "res://Assets/levels button dark.png";
+        continueButton.TexturePath = "res://Assets/continue button.png";
+        continueButton.PressedTexturePath = "res://Assets/continue button dark.png";
+
         levelsButton.Connect(nameof(GenericButton.ButtonReleased), this, nameof(OnLevelsButton_Click));
         continueButton.Connect(nameof(GenericButton.ButtonReleased), this, nameof(OnContinueButton_Click));
     }

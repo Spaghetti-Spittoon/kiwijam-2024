@@ -16,8 +16,10 @@ public class LevelsMenu : CanvasLayer
         backButton = GetNode<GenericButton>("BackButton");
         grid = GetNode<GridContainer>("GridContainer");
         progressState = GetNode<Progress>("/root/Progress");
+
+        backButton.TexturePath = "res://Assets/back button.png";
+        backButton.PressedTexturePath = "res://Assets/back button dark.png";
         backButton.Connect(nameof(GenericButton.ButtonReleased), this, nameof(OnBackButton_Click));
-        bus.Connect(nameof(EventBus.GridButtonReleased), this, nameof(OnLevel_Click));
         AddLevelButtons();
     }
 
@@ -35,6 +37,9 @@ public class LevelsMenu : CanvasLayer
         for(int i = 1; i <= progressState.LevelAchieved; i++) {
             GridButton buttonInstance = buttonScene.Instance<GridButton>();
             buttonInstance.GridIndex = i;
+            buttonInstance.TexturePath = $"res://Assets/level{i}.png";
+            buttonInstance.PressedTexturePath = $"res://Assets/level{i}.png";
+            buttonInstance.Connect(nameof(GridButton.GridButtonReleased), this, nameof(OnLevel_Click));
             grid.AddChild(buttonInstance);
         }
     }

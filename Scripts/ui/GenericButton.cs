@@ -4,7 +4,10 @@ using System;
 public class GenericButton : Node
 {
     [Export]
-    public string ButtonText;
+    public string TexturePath;
+
+    [Export]
+    public string PressedTexturePath;
 
     [Signal]
     public delegate void ButtonReleased();
@@ -13,9 +16,11 @@ public class GenericButton : Node
 
     public override void _Ready()
     {
-        Label buttonsLabel = GetNode<Label>("CenterContainer/Label");
         button = GetNode<TextureButton>("CenterContainer/TextureButton");
-        buttonsLabel.Text = ButtonText;
+        var normalTexture = (Texture)ResourceLoader.Load(TexturePath);
+        var pressedTexture = (Texture)ResourceLoader.Load(PressedTexturePath);
+        button.TextureNormal = normalTexture;
+        button.TexturePressed = pressedTexture;
         button.Connect("button_up", this, nameof(OnButton_Click));
     }
 

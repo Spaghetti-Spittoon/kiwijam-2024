@@ -14,8 +14,5 @@ public class EventBus : Node {
     public delegate void MainMenuAppeared();
 
     [Signal]
-    public delegate void GridButtonReleased(int gridIndex);
-
-    [Signal]
     public delegate void LevelOneAchieved();
 }
