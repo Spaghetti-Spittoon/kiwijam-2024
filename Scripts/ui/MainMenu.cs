@@ -17,6 +17,7 @@ public class MainMenu : CanvasLayer
         continueButton = GetNode<GenericButton>("ContinueButton");
         progressState = GetNode<Progress>("/root/Progress");
         levelsButton.Connect(nameof(GenericButton.ButtonReleased), this, nameof(OnLevelsButton_Click));
+        continueButton.Connect(nameof(GenericButton.ButtonReleased), this, nameof(OnContinueButton_Click));
     }
 
     void OnLevelsButton_Click() {
