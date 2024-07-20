@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 EventBus="*res://Scripts/EventBus.cs"
+Progress="*res://Scripts/Progress.cs"
 
 [global]
 
