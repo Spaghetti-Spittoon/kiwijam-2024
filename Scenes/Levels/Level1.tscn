@@ -89,27 +89,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.598, 11.7098, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.801, 13.766, 0 )
 
 [node name="Windmill1" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 13, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 12, 13, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 5, 0 ), Vector3( -7, 5, 0 ), Vector3( -7, 0, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 5, 0 ), Vector3( -6, 5, 0 ), Vector3( -6, 0, 0 ) ]
 Mode = 1
 
 [node name="Windmill2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 18, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 12, 18, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( -7, 0, 0 ), Vector3( -7, -5, 0 ), Vector3( 0, -5, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( -6, 0, 0 ), Vector3( -6, -5, 0 ), Vector3( 0, -5, 0 ) ]
 Mode = 1
 
 [node name="Windmill3" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 18, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 6, 18, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, -5, 0 ), Vector3( 7, -5, 0 ), Vector3( 7, 0, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, -5, 0 ), Vector3( 6, -5, 0 ), Vector3( 6, 0, 0 ) ]
 Mode = 1
 
 [node name="Windmill4" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 13, 0 )
+transform = Transform( 0.598328, 0, 0, 0, 1, 0, 0, 0, 1, 6, 13, 0 )
 collision_mask = 0
-TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 7, 0, 0 ), Vector3( 7, 5, 0 ), Vector3( 0, 5, 0 ) ]
+TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 6, 0, 0 ), Vector3( 6, 5, 0 ), Vector3( 0, 5, 0 ) ]
 Mode = 1
 
 [node name="TempTimeBox" parent="." instance=ExtResource( 9 )]
