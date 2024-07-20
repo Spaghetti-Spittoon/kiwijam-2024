@@ -1,3 +1,10 @@
+#any Large assets that should be tracked in mega.nz
+**/*.gltf
+**/*.fbx
+**/*.zip
+**/*.tar.gz
+**/*.material
+
 build/
 
 # Godot 4+ specific ignores
