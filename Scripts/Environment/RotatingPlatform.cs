@@ -44,7 +44,7 @@ public class RotatingPlatform : StaticBody
 
             currentRotation.z -= _rotationSpeed * delta;
 
-            GD.Print(currentRotation.z);
+            
 
             if (currentRotation.z < 0)
             {

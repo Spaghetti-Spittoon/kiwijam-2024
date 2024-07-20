@@ -27,10 +27,10 @@ public class Rotation : StaticBody
 	public override void _Ready()
 	{
 		original_transform = this.GlobalTransform;
-		GD.Print(original_transform.origin.x);
-		GD.Print(original_transform.origin.y);
-		GD.Print(original_transform.origin.z);
-		GD.Print("newline");
+		
+		
+		
+		
 
 	}
 

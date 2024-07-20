@@ -66,7 +66,7 @@ public class MovingPlatform : KinematicBody
 		var collision = MoveAndCollide(_velocity * delta, infiniteInertia:true);
 		if (collision != null)
 		{
-			GD.Print("Collision");
+			
 			var player = collision.Collider as Player;
 			player.MoveAndCollide(collision.Remainder);
 			player.ForceUpdateTransform();
@@ -81,7 +81,7 @@ public class MovingPlatform : KinematicBody
 	{
 
 		float x = (time_window%acceleration_window_div) / acceleration_window_div;
-		GD.Print(x + " : " + _velocity.x );
+		
 		if (time_window <= acceleration_window_div)
 		{
 			if (x < 0.5)

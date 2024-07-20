@@ -15,10 +15,10 @@ public class Level1Up : StaticBody
 
 	private void OnCollision(object body)
 	{
-		GD.Print("TestCollision");
+		
 		if (body is KinematicBody)
 		{
-			GD.Print("OnCollision_With_KinemeticBody");
+			
 			// GetTree().ReloadCurrentScene();
 			GetTree().ChangeScene("res://Scenes/Levels/Level1.tscn");
 		}

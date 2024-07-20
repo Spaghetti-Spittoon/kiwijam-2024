@@ -4,7 +4,7 @@ public class EventBus : Node {
 
     public override void _Ready()
     {
-        GD.Print("");    
+        
     }
 
     [Signal]
