@@ -1,6 +1,10 @@
 # kiwijam-2024
 Submission for the KiwiJam Auckland Hackathon 2024
 
+# Contribution Conventions
+
+- Use pascal case (SomeFileNameLikeThis) for all folders and files in `Scenes` and `Scripts` folders. If the name is an acronym, use all upper case.
+
 # Setting up your development environment
 
 - Install [Godot 3.6.beta4.mono](https://godotengine.org/download/archive/3.6-beta4/).
