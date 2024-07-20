@@ -14,7 +14,6 @@
 [ext_resource path="res://Scenes/Environment/SimpleStairs.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Environment/RotatingPlatform.tscn" type="PackedScene" id=13]
 
-
 [sub_resource type="BoxShape" id=1]
 
 [node name="Main" type="Spatial"]

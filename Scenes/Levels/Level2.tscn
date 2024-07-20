@@ -10,7 +10,6 @@
 [ext_resource path="res://Scenes/Environment/Level2/SimpleWall2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Environment/PathingPlatform.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2.04458, 0.529909, 2.03238 )
 
