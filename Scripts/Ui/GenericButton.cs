@@ -12,24 +12,24 @@ public class GenericButton : Control
     [Signal]
     public delegate void ButtonReleased();
 
-    TextureButton button;
+    protected TextureButton Button {get; private set;}
 
     public override void _Ready()
     {
-        button = GetNode<TextureButton>("TextureButton");
-        button.Connect("button_up", this, nameof(OnButton_Click));
+        Button = GetNode<TextureButton>("TextureButton");
+        Button.Connect("button_up", this, nameof(OnButton_Click));
         RedrawTextures();
     }
 
     public void RedrawTextures() {
         if(string.IsNullOrEmpty(TexturePath) == false) {
             var normalTexture = (Texture)ResourceLoader.Load(TexturePath);
-            button.TextureNormal = normalTexture;
+            Button.TextureNormal = normalTexture;
         }
 
         if(string.IsNullOrEmpty(TexturePath) == false) {
             var pressedTexture = (Texture)ResourceLoader.Load(PressedTexturePath);
-            button.TexturePressed = pressedTexture; 
+            Button.TexturePressed = pressedTexture; 
         }
     }
 

@@ -9,15 +9,13 @@ public class GridButton : GenericButton
     [Signal]
     public delegate void GridButtonReleased(int gridIndex);
 
-    TextureButton button;
-
     public override void _Ready()
     {
         base._Ready();
     }
 
     public void ScaleButton(Vector2 scale) {
-        button.RectScale = scale;
+        Button.RectScale = scale;
     }
 
     protected override void OnButton_Click() {
