@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Kiwijam24LargeAssets/babyIdling.gltf" type="PackedScene" id=1]
-
-[node name="babyIdling" instance=ExtResource( 1 )]
