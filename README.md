@@ -32,8 +32,8 @@ Submission for the KiwiJam Auckland Hackathon 2024
     
     Set-ExecutionPolicy Unrestricted -Scope CurrentUser
     ```
-
-- Download the [Large assets bundle](https://mega.nz/file/UwIEjZID#OZRhYEqhMU6m_A6Hjvr6-DVW04Oq_4vkjXwn-LQAMhw) and decompress it straight into the root folder.
+https://mega.nz/file/w4wHnA5Z#NSvks771L6rlLy-AsWGcxjzCiNSN-GLSnhX_9wZcQrk
+- Download the [Large assets bundle](https://mega.nz/file/w4wHnA5Z#NSvks771L6rlLy-AsWGcxjzCiNSN-GLSnhX_9wZcQrk) and decompress it straight into the root folder.
 
 # Deploying the project
 
