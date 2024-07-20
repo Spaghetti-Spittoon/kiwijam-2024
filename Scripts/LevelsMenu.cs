@@ -3,19 +3,23 @@ using System;
 
 public class LevelsMenu : CanvasLayer
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    SceneTree tree;
+    EventBus bus;
+    TextureButton backButton;
 
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        tree = GetTree();
+        bus = GetNode<EventBus>("/root/EventBus");
+        backButton = GetNode<TextureButton>("BackButton/TextureButton");
+        backButton.Connect(nameof(EventBus.MainMenuAppeared), this, nameof(OnBackButton_Click));
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    void OnBackButton_Click() {
+        var mainMenu = (PackedScene)ResourceLoader.Load("res://scenes/MainMenu.tscn");
+        var levelsInstance = mainMenu.Instance();
+	    tree.Root.AddChild(levelsInstance);
+        bus.EmitSignal(nameof(EventBus.MainMenuAppeared));
+        QueueFree();
+    }
 }

@@ -10,7 +10,10 @@
 script = ExtResource( 5 )
 
 [node name="Title" type="Label" parent="."]
-margin_right = 524.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -48.5
+margin_right = 48.5
 margin_bottom = 40.0
 theme = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -18,14 +21,17 @@ custom_constants/shadow_offset_y = 3
 text = "Levels"
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 101.0
+margin_left = 149.0
 margin_top = 97.0
-margin_right = 201.0
+margin_right = 249.0
 margin_bottom = 147.0
 
 [node name="Level1Button" type="CenterContainer" parent="GridContainer"]
 margin_right = 100.0
 margin_bottom = 50.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TextureButton" type="TextureButton" parent="GridContainer/Level1Button"]
 margin_right = 100.0
@@ -43,6 +49,30 @@ margin_right = 72.0
 margin_bottom = 34.0
 theme = ExtResource( 3 )
 text = "Level1"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BackButton" type="CenterContainer" parent="."]
+margin_right = 100.0
+margin_bottom = 50.0
+
+[node name="TextureButton" type="TextureButton" parent="BackButton"]
+margin_right = 100.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="BackButton"]
+margin_left = 31.0
+margin_top = 15.0
+margin_right = 69.0
+margin_bottom = 34.0
+theme = ExtResource( 3 )
+text = "Back"
 __meta__ = {
 "_edit_lock_": true
 }

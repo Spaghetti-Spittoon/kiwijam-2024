@@ -8,5 +8,8 @@ public class EventBus : Node {
     }
 
     [Signal]
-    public delegate void LevelOneSet();
+    public delegate void LevelsMenuAppeared();
+
+    [Signal]
+    public delegate void MainMenuAppeared();
 }

@@ -23,7 +23,7 @@ public class MainMenu : CanvasLayer
 
         //add levels scene
 	    tree.Root.AddChild(levelsInstance);
-        bus.EmitSignal(nameof(EventBus.LevelOneSet));
+        bus.EmitSignal(nameof(EventBus.LevelsMenuAppeared));
 
         //remove the main menu scene
         QueueFree();
