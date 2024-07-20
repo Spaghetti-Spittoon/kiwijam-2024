@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Primitive_Pillar.gltf" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Environment/MovingPlatform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/levels/Level1Up.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/Levels/Level1Up.cs" type="Script" id=6]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.13269, 1.99312, 2.06559 )
