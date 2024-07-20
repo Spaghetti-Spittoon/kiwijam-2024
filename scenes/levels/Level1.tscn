@@ -1,16 +1,23 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Cube_Prototype_Large_A.fbx" type="PackedScene" id=1]
 [ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Primitive_Wall.gltf" type="PackedScene" id=2]
 [ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Primitive_Pillar.gltf" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Environment/MovingPlatform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/levels/Level1Up.cs" type="Script" id=6]
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.13269, 1.99312, 2.06559 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.226994, 0.963199, 1 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1.36649, 11.2844, 9.3287 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 4.36693, 4.56241 )
 
 [node name="Main" type="Spatial"]
 
@@ -75,3 +82,20 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09693, 2.93482, -0.787889 )
 collision_layer = 4
 collision_mask = 2
+
+[node name="StaticBody7" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5651, -0.170062, -0.00701869 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210899, 7.15256e-07, 0 )
+shape = SubResource( 5 )
+
+[node name="Area" type="Area" parent="StaticBody7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.801418, 0, -1.54972e-06 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody7/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23552, 0, 1.54972e-06 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="StaticBody7/Area" to="StaticBody7" method="OnCollision"]
