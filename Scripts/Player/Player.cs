@@ -17,8 +17,9 @@ public class Player : KinematicBody
     [Export]
     private SpringArm _cameraArm;
 
-    [Export]
-    private Spatial _model;
+    private Spatial ModelWalking;
+    private Spatial ModelIdle;
+    private Spatial ModelJumping;
 
     private RayCast RCUpper1;
     private RayCast RCUpper2;
@@ -30,28 +31,41 @@ public class Player : KinematicBody
     private float directionX;
 
     private AnimationPlayer _running;
+    private AnimationPlayer _idle;
+    private AnimationPlayer _jumping;
 
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         _cameraArm = GetNode<SpringArm>("SpringArm");
-        _model = GetNode<Spatial>("Model");
+        ModelWalking = GetNode<Spatial>(nameof(ModelWalking));
+        ModelIdle = GetNode<Spatial>(nameof(ModelIdle));
+        ModelJumping = GetNode<Spatial>(nameof(ModelJumping));
 
-        _running = _model.GetNode<AnimationPlayer>("AnimationPlayer");
+        _running = ModelWalking.GetNode<AnimationPlayer>("AnimationPlayer");
         _running.CurrentAnimation = "Armature|walking|BaseLayer";
         _running.Play();
-        _running.Connect("animation_finished", this, nameof(OnAnimationFinished));
+        _running.Connect("animation_finished", this, nameof(OnWalkingAnimFinished));
 
-        RCUpper1 = _model.GetNode<RayCast>(nameof(RCUpper1));
-        RCUpper2 = _model.GetNode<RayCast>(nameof(RCUpper2));
-        RCBody = _model.GetNode<RayCast>(nameof(RCBody));
+        _idle = ModelIdle.GetNode<AnimationPlayer>("AnimationPlayer");
+        _idle.CurrentAnimation = "Armature|Idling|BaseLayer";
+        _idle.Play();
+        _idle.Connect("animation_finished", this, nameof(OnIdleAnimFinished));
+
+        _jumping = ModelJumping.GetNode<AnimationPlayer>("AnimationPlayer");
+        _jumping.CurrentAnimation = "Armature|jump|BaseLayer";
+        _jumping.Play();
+        _jumping.Connect("animation_finished", this, nameof(OnJumpingAnimFinished));
+
+        //RCUpper1 = _model.GetNode<RayCast>(nameof(RCUpper1));
+        //RCUpper2 = _model.GetNode<RayCast>(nameof(RCUpper2));
+        //RCBody = _model.GetNode<RayCast>(nameof(RCBody));
     }
 
-    public void OnAnimationFinished(string animationName)
-    {
-        _running.Play();
-    }
+    public void OnWalkingAnimFinished(string animationName) => _running.Play();
+    public void OnIdleAnimFinished(string animationName) => _idle.Play();
+    public void OnJumpingAnimFinished(string animationName) => _jumping.Play();
 
     public override void _Process(float delta)
     {
@@ -60,6 +74,10 @@ public class Player : KinematicBody
 
     public override void _PhysicsProcess(float delta)
     {
+        ModelWalking.Visible = false;
+        ModelJumping.Visible = false;
+        ModelIdle.Visible = false;
+
         var canMove = true;
 
         var moveDirection = Vector3.Zero;
@@ -67,9 +85,9 @@ public class Player : KinematicBody
         moveDirection.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
         //moveDirection = moveDirection.Rotated(Vector3.Up, _cameraArm.Rotation.y).Normalized();
 
-        RCUpper1.CastTo = new Vector3(0, 0, moveDirection.x);
-        RCUpper2.CastTo = new Vector3(0, 0, moveDirection.x);
-        RCBody.CastTo = new Vector3(0, 0, moveDirection.x);
+        //RCUpper1.CastTo = new Vector3(0, 0, moveDirection.x);
+        //RCUpper2.CastTo = new Vector3(0, 0, moveDirection.x);
+        //RCBody.CastTo = new Vector3(0, 0, moveDirection.x);
 
         velocity.x = moveDirection.x * _speed;
         velocity.z = moveDirection.z * _speed;
@@ -83,10 +101,12 @@ public class Player : KinematicBody
         {
             velocity.y = _jump_strength;
             snapVector = Vector3.Zero;
+            ModelJumping.Visible = true;
         }
         else if (isJumpingInAir)
         {
             DetectLedge();
+            ModelJumping.Visible = true;
         }
         else if (justLanded)
         {
@@ -95,6 +115,11 @@ public class Player : KinematicBody
         else if (IsOnFloor())
         {
             velocity.y = 0;
+
+            if (velocity.x != 0)
+            {
+                ModelWalking.Visible = true;
+            }
         }
 
         if (Input.IsActionJustReleased("forward"))
@@ -110,11 +135,17 @@ public class Player : KinematicBody
             return;
         }
 
+        if (!ModelWalking.Visible && !ModelJumping.Visible) ModelIdle.Visible = true;
+
         MoveAndSlideWithSnap(velocity, snapVector, Vector3.Up, true);
+
+
 
         var lookDirection = new Vector2(velocity.z, velocity.x);
 
-        _model.Rotation = new Vector3(_model.Rotation.x, lookDirection.Angle(), _model.Rotation.z);
+        ModelWalking.Rotation = new Vector3(ModelWalking.Rotation.x, lookDirection.Angle(), ModelWalking.Rotation.z);
+        ModelIdle.Rotation = new Vector3(ModelIdle.Rotation.x, lookDirection.Angle(), ModelIdle.Rotation.z);
+        ModelJumping.Rotation = new Vector3(ModelJumping.Rotation.x, lookDirection.Angle(), ModelJumping.Rotation.z);
 
         directionX = moveDirection.x;
 
