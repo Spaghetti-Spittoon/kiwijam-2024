@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/TitleTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/ui/MainMenu.cs" type="Script" id=5]
+[ext_resource path="res://scenes/ui/GenericButton.tscn" type="PackedScene" id=6]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -262.0
+margin_top = -20.0
+margin_right = 262.0
+margin_bottom = 20.0
+theme = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_y = 3
+text = "KiwiJam 2024 - Spaghetti Spittoon"
+
+[node name="LevelsButton" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -113.0
+margin_top = 22.0
+margin_right = -12.0
+margin_bottom = 74.0
+ButtonText = "Levels"
+
+[node name="ContinueButton" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 15.0
+margin_top = 22.0
+margin_right = 116.0
+margin_bottom = 74.0
+ButtonText = "Continue"

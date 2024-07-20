@@ -3,7 +3,7 @@ Submission for the KiwiJam Auckland Hackathon 2024
 
 # Setting up your development environment
 
-- Install Godot 3.6.beta4.mono.
+- Install [Godot 3.6.beta4.mono](https://godotengine.org/download/archive/3.6-beta4/).
 
 - Create a symlink to the godot3.6.beta4.mono.exe and add its absolute path to your PATH environment variable.
 
