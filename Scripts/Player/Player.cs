@@ -2,8 +2,13 @@ using Godot;
 
 public class Player : KinematicBody
 {
+    [Export]
     private float _speed = 7f;
+
+    [Export]
     private float _jump_strength = 20f;
+
+    [Export]
     private float _gravity = 50f;
 
     private Vector3 velocity;
@@ -22,11 +27,6 @@ public class Player : KinematicBody
     private bool _isOnLedge;
     private bool _isClimbingLedge;
 
-    private RayCast _RayCastWall;
-    private RayCast _RayCastLedge;
-    private Spatial _RayCastLedgeHolder;
-    private MeshInstance _RayCastLedgeMarker;
-
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -37,13 +37,6 @@ public class Player : KinematicBody
         RCUpper1 = _model.GetNode<RayCast>(nameof(RCUpper1));
         RCUpper2 = _model.GetNode<RayCast>(nameof(RCUpper2));
         RCBody = _model.GetNode<RayCast>(nameof(RCBody));
-
-
-        //_RayCastWall = GetNode<RayCast>("RayCastWall");
-        //_RayCastLedgeHolder = GetNode<Spatial>("RayCastLedgeHolder");
-
-        //_RayCastLedge = _RayCastLedgeHolder.GetNode<RayCast>("RayCastLedge");
-        //_RayCastLedgeMarker = _RayCastLedge.GetNode<MeshInstance>("RayCastLedgeMarker");
     }
 
     public override void _Process(float delta)
@@ -88,6 +81,14 @@ public class Player : KinematicBody
         else if (IsOnFloor())
         {
             velocity.y = 0;
+        }
+
+        if (Input.IsActionJustReleased("forward"))
+        {
+            if (velocity.y > 10f)
+            {
+                velocity.y = 10f;
+            }
         }
 
         if (_isClimbingLedge)
