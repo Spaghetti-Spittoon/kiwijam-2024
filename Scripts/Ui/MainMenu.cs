@@ -13,8 +13,8 @@ public class MainMenu : CanvasLayer
 	{
 		tree = GetTree();
 		bus = GetNode<EventBus>("/root/EventBus");
-		levelsButton = GetNode<GenericButton>("LevelsButton");
-		continueButton = GetNode<GenericButton>("ContinueButton");
+		levelsButton = GetNode<GenericButton>("Container/LevelsButton");
+		continueButton = GetNode<GenericButton>("Container/ContinueButton");
 		progressState = GetNode<Progress>("/root/Progress");
 
 		levelsButton.TexturePath = "res://Assets/levels button.png";

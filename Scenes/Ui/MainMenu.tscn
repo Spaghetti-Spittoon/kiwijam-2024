@@ -7,37 +7,47 @@
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 5 )
 
-[node name="LevelsButton" parent="." instance=ExtResource( 6 )]
+[node name="Container" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -113.0
-margin_top = 22.0
-margin_right = -12.0
-margin_bottom = 74.0
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="LevelsButton" parent="Container" instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = 39.0
+margin_right = -35.0
+margin_bottom = 91.0
 TexturePath = "res://Assets/levels button.png"
 PressedTexturePath = "res://Assets/levels button dark.png"
 
-[node name="ContinueButton" parent="." instance=ExtResource( 6 )]
+[node name="ContinueButton" parent="Container" instance=ExtResource( 6 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 15.0
-margin_top = 22.0
-margin_right = 116.0
-margin_bottom = 74.0
+margin_left = 32.0
+margin_top = 39.0
+margin_right = 133.0
+margin_bottom = 91.0
 TexturePath = "res://Assets/continue button.png"
 PressedTexturePath = "res://Assets/continue button dark.png"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Container"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -247.0
-margin_top = -485.0
-margin_right = 253.0
-margin_bottom = 15.0
+margin_left = -248.0
+margin_top = -467.0
+margin_right = 252.0
+margin_bottom = 33.0
 texture = ExtResource( 2 )
