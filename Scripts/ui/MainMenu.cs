@@ -20,7 +20,7 @@ public class MainMenu : CanvasLayer
     }
 
     void OnLevelsButton_Click() {
-        var levelsMenu = (PackedScene)ResourceLoader.Load("res://scenes/levels/LevelsMenu.tscn");
+        var levelsMenu = (PackedScene)ResourceLoader.Load("res://scenes/ui/LevelsMenu.tscn");
         var levelsInstance = levelsMenu.Instance();
 
         //add levels scene

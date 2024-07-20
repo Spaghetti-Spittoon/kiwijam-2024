@@ -22,7 +22,7 @@ public class LevelsMenu : CanvasLayer
     }
 
     void OnBackButton_Click() {
-        var mainMenu = (PackedScene)ResourceLoader.Load("res://scenes/levels/MainMenu.tscn");
+        var mainMenu = (PackedScene)ResourceLoader.Load("res://scenes/ui/MainMenu.tscn");
         var levelsInstance = mainMenu.Instance();
 	    tree.Root.AddChild(levelsInstance);
         bus.EmitSignal(nameof(EventBus.MainMenuAppeared));
