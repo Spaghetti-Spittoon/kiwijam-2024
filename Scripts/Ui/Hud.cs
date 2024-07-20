@@ -27,6 +27,7 @@ public class Hud : CanvasLayer {
         topRightPiece = GetNode<TextureRect>("PiecesContainer/TextureRect2");
         botLeftPiece = GetNode<TextureRect>("PiecesContainer/TextureRect3");
         botRightPiece = GetNode<TextureRect>("PiecesContainer/TextureRect4");
+        collectionCounter = GetNode<Label>("Label");
 
         bus.Connect(nameof(EventBus.PieceCollected), this, nameof(OnPieceCollected));
         topLeftPiece.Visible = false;
@@ -36,6 +37,7 @@ public class Hud : CanvasLayer {
     }
 
     void OnPieceCollected(PieceQuadrant quadrant) {
+        GD.Print("OnPieceCollected");
 
         switch(quadrant) {
             case PieceQuadrant.TopLeft:
