@@ -33,7 +33,7 @@ public class GenericButton : Control
         }
     }
 
-    void OnButton_Click() {
+    protected virtual void OnButton_Click() {
         EmitSignal(nameof(ButtonReleased));
     }
 }

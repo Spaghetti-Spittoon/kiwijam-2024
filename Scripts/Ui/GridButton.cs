@@ -13,8 +13,6 @@ public class GridButton : GenericButton
 
     public override void _Ready()
     {
-        button = GetNode<TextureButton>("TextureButton");
-        button.Connect("button_up", this, nameof(OnButton_Click));
         base._Ready();
     }
 
@@ -22,7 +20,8 @@ public class GridButton : GenericButton
         button.RectScale = scale;
     }
 
-    void OnButton_Click() {
+    protected override void OnButton_Click() {
         EmitSignal(nameof(GridButtonReleased), GridIndex);
+        base.OnButton_Click();
     }
 }
