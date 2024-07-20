@@ -27,7 +27,7 @@ public class LevelsMenu : CanvasLayer
     }
 
     void AddLevelButtons() {
-        grid.AddChild();
+        // grid.AddChild();
     }
 
     void OnLevel_Click(int gridIndex) {
