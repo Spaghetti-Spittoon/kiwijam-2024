@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<<< HEAD:Assets/level one (baby).png.import
 path="res://.import/level one (baby).png-e1434ef949c47630bde62b1eac654528.stex"
+========
+path="res://.import/random.png-10ee6e79990f272b4b5e5cb7c97b4b83.stex"
+>>>>>>>> main:Assets/random.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Assets/level one (baby).png.import
 source_file="res://Assets/level one (baby).png"
 dest_files=[ "res://.import/level one (baby).png-e1434ef949c47630bde62b1eac654528.stex" ]
+========
+source_file="res://Assets/random.png"
+dest_files=[ "res://.import/random.png-10ee6e79990f272b4b5e5cb7c97b4b83.stex" ]
+>>>>>>>> main:Assets/random.png.import
 
 [params]
 

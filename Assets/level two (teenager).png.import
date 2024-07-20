@@ -2,15 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<<< HEAD:Assets/level two (teenager).png.import
 path="res://.import/level two (teenager).png-86bec445afac1f88c5742586e387b214.stex"
+========
+path="res://.import/back button (1).png-673885abbfd828d3b08f0bb0de773978.stex"
+>>>>>>>> main:back button (1).png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:Assets/level two (teenager).png.import
 source_file="res://Assets/level two (teenager).png"
 dest_files=[ "res://.import/level two (teenager).png-86bec445afac1f88c5742586e387b214.stex" ]
+========
+source_file="res://back button (1).png"
+dest_files=[ "res://.import/back button (1).png-673885abbfd828d3b08f0bb0de773978.stex" ]
+>>>>>>>> main:back button (1).png.import
 
 [params]
 
