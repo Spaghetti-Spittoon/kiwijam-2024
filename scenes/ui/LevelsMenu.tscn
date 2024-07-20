@@ -25,5 +25,5 @@ margin_right = 249.0
 margin_bottom = 147.0
 columns = 5
 
-[node name="GenericButton" parent="." instance=ExtResource( 7 )]
+[node name="BackButton" parent="." instance=ExtResource( 7 )]
 ButtonText = "Back"
