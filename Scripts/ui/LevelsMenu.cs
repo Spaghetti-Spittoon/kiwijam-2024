@@ -38,7 +38,7 @@ public class LevelsMenu : CanvasLayer
             GridButton buttonInstance = buttonScene.Instance<GridButton>();
             buttonInstance.GridIndex = i;
             buttonInstance.TexturePath = $"res://Assets/level{i}.png";
-            buttonInstance.PressedTexturePath = $"res://Assets/level{i}.png";
+            buttonInstance.PressedTexturePath = $"res://Assets/level{i} dark.png";
             buttonInstance.Connect(nameof(GridButton.GridButtonReleased), this, nameof(OnLevel_Click));
             grid.AddChild(buttonInstance);
             buttonInstance.ScaleButton(new Vector2{x = 0.3f, y = 0.3f});
