@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="kiwijam-2024"
-run/main_scene="res://scenes/ui/MainMenu.tscn"
+run/main_scene="res://Scenes/Ui/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
