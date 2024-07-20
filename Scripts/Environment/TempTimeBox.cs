@@ -2,26 +2,50 @@ using Godot;
 
 public class TempTimeBox : StaticBody
 {
+    [Export]
+    private float _flickerTime = 1f;
+
+    [Export]
+    private float _ReturnTime = 2f;
+
     private Spatial _model;
+    private CollisionShape _shape;
 
     private bool isPhasing;
     private float flickerTimer;
-    private float flickerShortening;
+    private float flickerCap;
+    private bool isHidden;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         _model = GetNode<Spatial>("Model");
+        _shape = GetNode<CollisionShape>("CollisionShape");
+        flickerCap = _flickerTime;
     }
 
     public override void _Process(float delta)
     {
-        flickerTimer += delta;
-
-        if (flickerTimer > 10)
+        if (isPhasing && !isHidden)
         {
-            _model.Visible = !_model.Visible;
-            flickerTimer = 0;
+            flickerTimer += delta;
+
+            if (flickerTimer > flickerCap)
+            {
+                _model.Visible = !_model.Visible;
+                flickerTimer = 0;
+                flickerCap /= 1.3f;
+
+                if (flickerCap < 0.05f)
+                {
+                    _model.Visible = false;
+                    isHidden = true;
+                    _shape.Disabled = true;
+
+                    var timer = GetTree().CreateTimer(_ReturnTime);
+                    timer.Connect("timeout", this, nameof(ReturnToWorld));
+                }
+            }
         }
     }
 
@@ -30,14 +54,15 @@ public class TempTimeBox : StaticBody
         if (!isPhasing)
         {
             isPhasing = true;
-
-            var timer = GetTree().CreateTimer(1);
-            timer.Connect("timeout", this, nameof(DoPhase));
         }
     }
 
-    private void DoPhase()
+    private void ReturnToWorld()
     {
-
+        _model.Visible = true;
+        _shape.Disabled = false;
+        isHidden = false;
+        isPhasing = false;
+        flickerCap = _flickerTime;
     }
 }

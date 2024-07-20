@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/KayKit_Prototype_Bits_1.0_FREE/Assets/gltf/Primitive_Floor.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Environment/RotatingPlatform.cs" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.99949, 0.487602, 2.04417 )
+
+[node name="StaticBody" type="StaticBody"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.533589, 0.0248539 )
+shape = SubResource( 1 )
+
+[node name="Primitive_Floor" parent="." instance=ExtResource( 1 )]
