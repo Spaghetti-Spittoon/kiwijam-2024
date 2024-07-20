@@ -72,7 +72,15 @@ public class PathingPlatform : KinematicBody
             collider.MoveAndCollide(collision.Remainder);
             collider.ForceUpdateTransform();
 
-            MoveAndCollide(collision.Remainder + (direction * _Speed * delta) * 3, infiniteInertia: true);
+            var additionalVelocity = Vector3.Zero;
+            additionalVelocity.y = direction.y * _Speed * delta * 3f;
+
+            if (_Speed < 6f)
+            {
+                additionalVelocity.y = direction.y * _Speed * delta * 3f;
+            }
+
+            MoveAndCollide(collision.Remainder + additionalVelocity, infiniteInertia: true);
             ForceUpdateTransform();
         }
     }
