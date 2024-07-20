@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Environment/SimplePlatform.tscn" type="PackedScene" id=2]
@@ -13,8 +13,11 @@
 [ext_resource path="res://Scenes/Environment/SimpleTunnel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Environment/SimpleStairs.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Environment/RotatingPlatform.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Environment/PhotoPiece.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/level2_top_left.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Ui/Hud.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/level2_top_right.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/level2_bot_left.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/level2_bot_right.tscn" type="PackedScene" id=18]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -231,7 +234,16 @@ _flickerTime = 0.5
 [node name="SimplePlatform17" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2.20032, 0, 0, 0, 1, 0, 0, 0, 1, 22.8523, 28.4307, 0 )
 
-[node name="PhotoPiece" parent="." instance=ExtResource( 14 )]
-transform = Transform( 0.690561, 0.35305, -0.631254, -0.260583, 0.935604, 0.238204, 0.674702, 0, 0.73809, 14.1068, 2.7002, 0 )
-
 [node name="Hud" parent="." instance=ExtResource( 15 )]
+
+[node name="top_left" parent="." instance=ExtResource( 14 )]
+transform = Transform( 0.0896965, -0.0393834, -0.0200868, 0, 0.0454348, -0.0890824, 0.0442101, 0.0799038, 0.0407535, 14.2639, 1.39652, 0 )
+
+[node name="top_right" parent="." instance=ExtResource( 16 )]
+transform = Transform( 0.0940456, -0.0337789, -0.00379513, 0.00245637, 0.0178894, -0.0983562, 0.0339026, 0.0924065, 0.017654, 23.8177, 13.774, 0 )
+
+[node name="bot_left" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.0905503, 0.0359879, 0.0224835, 0.0141333, 0.0243816, -0.0959468, -0.0400111, 0.0900578, 0.0169914, -18.0598, 28.9923, 0 )
+
+[node name="bot_right" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.0972219, 0.000321098, 0.0234051, 0.0234073, -0.00133368, -0.0972128, 0, 0.0999906, -0.00137179, -18.0904, 32.4653, 0 )
