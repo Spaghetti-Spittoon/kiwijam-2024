@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/continue button (1).png-a9c3d936ecf40fe1f16cc43ba3503808.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Assets/levels button.png"
+source_file="res://Assets/continue button (1).png"
+dest_files=[ "res://.import/continue button (1).png-a9c3d936ecf40fe1f16cc43ba3503808.stex" ]
+
 [params]
 
 compress/mode=0
