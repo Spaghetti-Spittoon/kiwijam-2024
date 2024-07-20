@@ -12,4 +12,7 @@ public class EventBus : Node {
 
     [Signal]
     public delegate void MainMenuAppeared();
+
+    [Signal]
+    public delegate void GridButtonReleased(int gridIndex);
 }
