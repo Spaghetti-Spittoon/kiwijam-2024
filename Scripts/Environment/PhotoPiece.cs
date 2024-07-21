@@ -27,7 +27,7 @@ public class PhotoPiece : Area {
     public override void _PhysicsProcess(float delta)
     {
         var newTransform = Transform;
-        newTransform.basis = newTransform.basis.Rotated(Vector3.Up, 0.01f);
+        newTransform.basis = newTransform.basis.Rotated(Vector3.Up, 0.05f);
         Transform = newTransform;
     }
 }
