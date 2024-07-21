@@ -198,7 +198,7 @@ public class Player : KinematicBody
 		const int k_direction_middle = 0;
 		const int k_direction_right = 1;
 
-		counter_x_inertia = Mathf.Clamp(counter_x_inertia, -2, 0);
+		counter_x_inertia = Mathf.Clamp(counter_x_inertia, -0.5f, 0);
 
 		float rotationX = 0;
 		// rotationX = Mathf.Clamp(rotationX, -90, 30);
@@ -327,11 +327,11 @@ public class Player : KinematicBody
 			{
 				if (counter_x > 1)
 				{
-					counter_x = 1;
+					counter_x = 0.7f;
 				}
 				counter_x -= time;
 				counter_x_inertia = -2;
-				rotationX = easeIn(counter_x - 0.3f) * k_camera_turn_angle * direction;
+				rotationX = easeIn(counter_x) * k_camera_turn_angle * direction;
 			}
 			else
 			{
@@ -349,7 +349,7 @@ public class Player : KinematicBody
 			// rotationX = (GetViewport().GetMousePosition().x / GetViewport().Size.x);
 
 			float half = GetViewport().Size.x / 2;
-			rotationX = ((GetViewport().GetMousePosition().x - half) / half) * 30;
+			rotationX = ((GetViewport().GetMousePosition().x - half) / half) * 301;
 		}
 
 
