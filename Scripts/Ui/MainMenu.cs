@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Start : CanvasLayer
+public class MainMenu : CanvasLayer
 {
 	SceneTree tree;
 	EventBus bus;
