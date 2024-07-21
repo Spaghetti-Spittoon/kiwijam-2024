@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/babyJumpingReduced.gltf-89b67606781353436c72585f62dc05cd.scn"
+path="res://.import/cylinder.gltf-294e9ab23a4ef07a69e6ba382e4498d6.scn"
 
 [deps]
 
-source_file="res://Assets/babyJumpingReduced.gltf"
-dest_files=[ "res://.import/babyJumpingReduced.gltf-89b67606781353436c72585f62dc05cd.scn" ]
+source_file="res://Assets/cylinder.gltf"
+dest_files=[ "res://.import/cylinder.gltf-294e9ab23a4ef07a69e6ba382e4498d6.scn" ]
 
 [params]
 
