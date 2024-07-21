@@ -74,6 +74,6 @@ public class LevelsMenu : CanvasLayer
 
 	void GotoLevel(Node level) {
 		tree.Root.AddChild(level);
-		QueueFree();
+		GetParent().QueueFree();
 	}
 }

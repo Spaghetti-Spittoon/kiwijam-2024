@@ -21,7 +21,7 @@
 [ext_resource path="res://Assets/Level1/floor.gltf" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Footsteps.wav" type="AudioStream" id=20]
 [ext_resource path="res://Scripts/Player/CameraArm.cs" type="Script" id=21]
-[ext_resource path="res://Scripts/Ui/Start.cs" type="Script" id=22]
+[ext_resource path="res://Scripts/Start.cs" type="Script" id=22]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -30,7 +30,6 @@ script = ExtResource( 22 )
 
 [node name="MainMenu" parent="." instance=ExtResource( 2 )]
 layer = 2
-script = null
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2.13373, 0, 0, 1.61656 )

@@ -35,7 +35,7 @@ public class Start : Spatial
 		var levelsInstance = levelsMenu.Instance();
 
 		//add levels scene
-		tree.Root.AddChild(levelsInstance);
+		AddChild(levelsInstance);
 		bus.EmitSignal(nameof(EventBus.LevelsMenuAppeared));
 
 		//remove the main menu scene

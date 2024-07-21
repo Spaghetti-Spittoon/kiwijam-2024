@@ -1,7 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/title_art.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Ui/GenericButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float blur_amount : hint_range(0.0, 10.0) = 5.0;
+uniform vec4 color : hint_color = vec4(1.0, 1.0, 1.0, 0.5);
+
+void fragment() {
+    vec2 texel_size = vec2(1.0) / vec2(textureSize(TEXTURE, 0));
+    vec4 sum = vec4(0.0);
+    float total = 0.0;
+    
+    for (float x = -blur_amount; x <= blur_amount; x++) {
+        for (float y = -blur_amount; y <= blur_amount; y++) {
+            float weight = 1.0 - length(vec2(x, y)) / blur_amount;
+            sum += texture(TEXTURE, FRAGCOORD.xy / SCREEN_PIXEL_SIZE + vec2(x, y) * texel_size) * weight;
+            total += weight;
+        }
+    }
+    
+    vec4 blurred_color = sum / total;
+    COLOR = mix(blurred_color, color, color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -54,6 +80,7 @@ texture = ExtResource( 2 )
 layer = 0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0.0588235 )
