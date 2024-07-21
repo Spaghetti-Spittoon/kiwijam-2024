@@ -39,7 +39,8 @@ public class Start : Spatial
 		bus.EmitSignal(nameof(EventBus.LevelsMenuAppeared));
 
 		//remove the main menu scene
-		QueueFree();
+		var mainMenu = GetNode("MainMenu");
+		mainMenu.QueueFree();
 	}
 
 	void OnContinueButton_Click() {

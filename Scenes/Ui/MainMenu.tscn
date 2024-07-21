@@ -49,3 +49,11 @@ margin_top = -467.0
 margin_right = 252.0
 margin_bottom = 33.0
 texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.0588235 )
