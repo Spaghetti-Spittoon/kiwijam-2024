@@ -29,7 +29,7 @@ public class LevelsMenu : CanvasLayer
 
 		var mainMenu = (PackedScene)ResourceLoader.Load("res://Scenes/Ui/MainMenu.tscn");
 		var levelsInstance = mainMenu.Instance();
-		tree.Root.AddChild(levelsInstance);
+		GetParent().AddChild(levelsInstance);
 
 		bus.EmitSignal(nameof(EventBus.MainMenuAppeared));
 		QueueFree();
