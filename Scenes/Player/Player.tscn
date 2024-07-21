@@ -39,24 +39,24 @@ stream = ExtResource( 6 )
 transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.5, 0 )
 
 [node name="RCBody" type="RayCast" parent="ModelWalking"]
-transform = Transform( 0.031855, 0, 0, 0, 0.031855, 0, 0, 0, 0.031855, -0.00237101, -0.683143, -0.0160817 )
+transform = Transform( 0.010098, 0, 0, 0, 0.010098, 0, 0, 0, 0.010098, -0.000751609, -0.716556, -0.00509789 )
 enabled = true
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper1" type="RayCast" parent="ModelWalking"]
-transform = Transform( 0.031855, 0, 0, 0, 0.031855, 0, 0, 0, 0.031855, -0.00237101, -0.683907, -0.00622601 )
+transform = Transform( 0.010098, 0, 0, 0, 0.010098, 0, 0, 0, 0.010098, -0.000751609, -0.716799, -0.00197364 )
 enabled = true
 cast_to = Vector3( 0, 0, -0.3 )
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
 [node name="RCUpper2" type="RayCast" parent="ModelWalking"]
-transform = Transform( 0.031855, 0, 0, 0, 0.031855, 0, 0, 0, 0.031855, -0.00237101, -0.6906, -0.00622601 )
+transform = Transform( 0.010098, 0, 0, 0, 0.010098, 0, 0, 0, 0.010098, -0.000751609, -0.71892, -0.00197364 )
 enabled = true
 cast_to = Vector3( 0, 0, -0.3 )
 debug_shape_custom_color = Color( 1, 0, 0.211765, 1 )
 
-[node name="ModelJumping" parent="." instance=ExtResource( 1 )]
+[node name="ModelIdle" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.5, 0 )
 
-[node name="ModelIdle" parent="." instance=ExtResource( 4 )]
+[node name="ModelJumping" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.317, 0, 0, 0, 0.317, 0, 0, 0, 0.317, 0, -0.5, 0 )
