@@ -291,3 +291,11 @@ transform = Transform( 0.0716305, 0, 0, 0, 0.0725019, 0, 0, 0, 0.0765117, 1.8364
 collision_mask = 0
 TargetPoints = [ Vector3( 0, 0, 0 ), Vector3( 0, 5, 0 ) ]
 _Speed = 5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.156863 )
