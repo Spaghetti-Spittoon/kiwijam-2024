@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class MainMenu : CanvasLayer
+public class Start : Spatial
 {
 	SceneTree tree;
 	EventBus bus;
@@ -13,8 +13,8 @@ public class MainMenu : CanvasLayer
 	{
 		tree = GetTree();
 		bus = GetNode<EventBus>("/root/EventBus");
-		levelsButton = GetNode<GenericButton>("Container/LevelsButton");
-		continueButton = GetNode<GenericButton>("Container/ContinueButton");
+		levelsButton = GetNode<GenericButton>("MainMenu/Container/LevelsButton");
+		continueButton = GetNode<GenericButton>("MainMenu/Container/ContinueButton");
 		progressState = GetNode<Progress>("/root/Progress");
 
 		levelsButton.TexturePath = "res://Assets/levels button.png";
