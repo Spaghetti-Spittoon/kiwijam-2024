@@ -22,8 +22,8 @@ Global="*res://Scenes/Global/Global.tscn"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
+window/size/width=1000
+window/size/height=800
 
 [global]
 
