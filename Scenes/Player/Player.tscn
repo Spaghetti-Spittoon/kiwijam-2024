@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/Player/CameraArm.cs" type="Script" id=3]
 [ext_resource path="res://Kiwijam24LargeAssets/babyIdlingReduced.gltf" type="PackedScene" id=4]
 [ext_resource path="res://Kiwijam24LargeAssets/babyWalkingReduced.gltf" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Footsteps.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Footsteps.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Assets/PlatformJump.mp3" type="AudioStream" id=7]
 
 [sub_resource type="CylinderShape" id=1]
@@ -28,6 +28,7 @@ margin = 0.2
 script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="SpringArm"]
+current = true
 
 [node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

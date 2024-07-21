@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/GameMusic.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/GameMusic.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/Global/Global.cs" type="Script" id=2]
 
 [node name="Global" type="Spatial"]
