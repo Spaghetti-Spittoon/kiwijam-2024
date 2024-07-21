@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/title_art.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Ui/MainMenu.cs" type="Script" id=5]
 [ext_resource path="res://Scenes/Ui/GenericButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float lod: hint_range(0.0, 5) = 0.0;
+
+void fragment(){
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, lod);
+	COLOR.a = 0.2;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/lod = 0.0
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource( 5 )
@@ -51,3 +65,16 @@ margin_top = -467.0
 margin_right = 252.0
 margin_bottom = 33.0
 texture = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
