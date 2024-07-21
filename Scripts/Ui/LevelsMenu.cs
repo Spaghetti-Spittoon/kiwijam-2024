@@ -24,9 +24,13 @@ public class LevelsMenu : CanvasLayer
 	}
 
 	void OnBackButton_Click() {
+		//hide buttons to prevent duplicate scenes
+		backButton.Visible = false;
+
 		var mainMenu = (PackedScene)ResourceLoader.Load("res://Scenes/Ui/MainMenu.tscn");
 		var levelsInstance = mainMenu.Instance();
 		tree.Root.AddChild(levelsInstance);
+
 		bus.EmitSignal(nameof(EventBus.MainMenuAppeared));
 		QueueFree();
 	}
@@ -56,12 +60,20 @@ public class LevelsMenu : CanvasLayer
 			default:
 				throw new Exception("ERROR: level 0 not valid");
 		}
+		//hide buttons to prevent duplicate scenes
+		backButton.Visible = false;
+		var gridButtons = grid.GetChildren();
+		
+		for(int i = 0; i < gridButtons.Count; i++) {
+			var currentButton = (GridButton)gridButtons[i];
+			currentButton.Visible = false;
+		}
 		Node level = ((PackedScene)ResourceLoader.Load(scenePath)).Instance();
 		GotoLevel(level);
 	}
 
 	void GotoLevel(Node level) {
 		tree.Root.AddChild(level);
-		QueueFree();
+		GetParent().QueueFree();
 	}
 }

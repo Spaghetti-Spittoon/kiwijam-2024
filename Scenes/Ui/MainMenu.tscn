@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/title_art.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/Ui/MainMenu.cs" type="Script" id=5]
 [ext_resource path="res://Scenes/Ui/GenericButton.tscn" type="PackedScene" id=6]
 
 [node name="MainMenu" type="CanvasLayer"]
-script = ExtResource( 5 )
 
 [node name="Container" type="Control" parent="."]
 anchor_left = 0.5
@@ -13,9 +11,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -20.0
-margin_top = -20.0
+margin_top = 210.0
 margin_right = 20.0
-margin_bottom = 20.0
+margin_bottom = 250.0
 
 [node name="LevelsButton" parent="Container" instance=ExtResource( 6 )]
 anchor_left = 0.5
@@ -51,3 +49,11 @@ margin_top = -467.0
 margin_right = 252.0
 margin_bottom = 33.0
 texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.156863 )
