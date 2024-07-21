@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/babyIdlingReduced.gltf-eb8398208324c41da7be130754542b80.scn"
+path="res://.import/tower.gltf-275d6a5efa64522a9551cf559edd5434.scn"
 
 [deps]
 
-source_file="res://Assets/babyIdlingReduced.gltf"
-dest_files=[ "res://.import/babyIdlingReduced.gltf-eb8398208324c41da7be130754542b80.scn" ]
+source_file="res://Assets/Level1/tower.gltf"
+dest_files=[ "res://.import/tower.gltf-275d6a5efa64522a9551cf559edd5434.scn" ]
 
 [params]
 
