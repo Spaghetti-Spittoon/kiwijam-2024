@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Environment/Level1/PathingPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Ui/MainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Environment/Level1/SimplePlatform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Environment/Level1/DollhouseWallOpen.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Environment/SimpleStairs.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/level2_top_right.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/level2_bot_left.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Environment/Boundary.tscn" type="PackedScene" id=8]
@@ -174,14 +173,6 @@ collision_mask = 0
 
 [node name="SimplePlatform12" parent="." instance=ExtResource( 3 )]
 transform = Transform( 2.63027, 0, 0, 0, 1, 0, 0, 0, 1, -15.889, 29.515, 0 )
-collision_mask = 0
-
-[node name="SimpleStairs" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8062, 19.9742, 0 )
-collision_mask = 0
-
-[node name="SimpleStairs2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0267, 21.9635, 0 )
 collision_mask = 0
 
 [node name="SimpleTunnel3" parent="." instance=ExtResource( 4 )]
