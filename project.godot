@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="kiwijam-2024"
-run/main_scene="res://Scenes/Ui/MainMenu.tscn"
+run/main_scene="res://Scenes/Start.tscn"
 config/icon="res://icon.png"
 
 [autoload]
