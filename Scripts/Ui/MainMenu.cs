@@ -47,6 +47,6 @@ public class Start : CanvasLayer
 		var scenePath = $"res://Scenes/Levels/Level{achievedLevel}.tscn";
 		Node level = ((PackedScene)ResourceLoader.Load(scenePath)).Instance();
 		tree.Root.AddChild(level);
-		QueueFree();
+		GetParent().QueueFree();
 	}
 }
