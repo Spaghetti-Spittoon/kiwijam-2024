@@ -341,12 +341,19 @@ public class Player : KinematicBody
 				direction = k_direction_middle;
 			}
 		}
-		// GD.Print("rotation:" + rotationX);
-		// GD.Print("counter:" + counter_x);
+
+		if (Input.IsMouseButtonPressed(1))
+		{
+			// GD.Print(GetViewport().Size.x);
+			// GD.Print(GetViewport().GetMousePosition().x);
+			// rotationX = (GetViewport().GetMousePosition().x / GetViewport().Size.x);
+
+			float half = GetViewport().Size.x / 2;
+			rotationX = ((GetViewport().GetMousePosition().x - half) / half) * 30;
+		}
+
 
 		_cameraArm.RotationDegrees = new Vector3(_cameraArm.RotationDegrees.x, rotationX, _cameraArm.RotationDegrees.z);
-		GD.Print("camera rotation:" + _cameraArm.RotationDegrees);
-		GD.Print("x counter:" + counter_x);
 	}
 
 
