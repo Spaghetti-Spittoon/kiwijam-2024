@@ -349,7 +349,7 @@ public class Player : KinematicBody
 			// rotationX = (GetViewport().GetMousePosition().x / GetViewport().Size.x);
 
 			float half = GetViewport().Size.x / 2;
-			rotationX = ((GetViewport().GetMousePosition().x - half) / half) * 60;
+			rotationX = ((GetViewport().GetMousePosition().x - half) / half) * -60;
 		}
 
 
