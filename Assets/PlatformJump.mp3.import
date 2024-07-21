@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PlatformJump.mp3-7dc35fd640b7810d20c9621c4393d150.mp3str"
+
+[deps]
+
+source_file="res://Assets/PlatformJump.mp3"
+dest_files=[ "res://.import/PlatformJump.mp3-7dc35fd640b7810d20c9621c4393d150.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
