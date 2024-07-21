@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Environment/RotatingPlatform.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Level1/cylinder.gltf" type="PackedScene" id=3]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.816138
+
+[sub_resource type="CylinderShape" id=2]
+radius = 1.00661
+
+[sub_resource type="CylinderShape" id=3]
+height = 0.743524
+radius = 1.08868
+
+[node name="StaticBody" type="StaticBody"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -8.9593e-08, -2.04965, 0, 1.03076, -4.5056e-08, 0, 0, 0, 0.95223, 0, -0.00215018, -0.0162173 )
+shape = SubResource( 1 )
+
+[node name="cylinder" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.191939, 0, 0, 0, 0.126632, 0, 0, 0, 0.11813, 0, 0, 0 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( -1.07292e-08, -0.332377, 0, 1.05954, -6.27147e-08, 0, 0, 0, 1, -1.7112, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( -3.55634e-08, -0.813595, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.71428, 0, 0 )
+shape = SubResource( 3 )

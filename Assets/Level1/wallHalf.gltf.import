@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/babyWalkingReduced.gltf-954a7907e6505b3803d2fcf16dee4d45.scn"
+path="res://.import/wallHalf.gltf-785a57d0761ce595a4b7157a3668bd14.scn"
 
 [deps]
 
-source_file="res://Assets/babyWalkingReduced.gltf"
-dest_files=[ "res://.import/babyWalkingReduced.gltf-954a7907e6505b3803d2fcf16dee4d45.scn" ]
+source_file="res://Assets/Level1/wallHalf.gltf"
+dest_files=[ "res://.import/wallHalf.gltf-785a57d0761ce595a4b7157a3668bd14.scn" ]
 
 [params]
 
