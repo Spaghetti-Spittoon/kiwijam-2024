@@ -35,3 +35,11 @@ margin_right = 151.0
 margin_bottom = 102.0
 TexturePath = "res://Assets/back button.png"
 PressedTexturePath = "res://Assets/back button dark.png"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.196078 )
