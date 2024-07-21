@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/wallHalf.gltf-785a57d0761ce595a4b7157a3668bd14.scn"
+path="res://.import/pillar.gltf-53453748b595c56b9270a5a16b4e1ef6.scn"
 
 [deps]
 
-source_file="res://Assets/Level1/wallHalf.gltf"
-dest_files=[ "res://.import/wallHalf.gltf-785a57d0761ce595a4b7157a3668bd14.scn" ]
+source_file="res://Assets/Level1/pillar.gltf"
+dest_files=[ "res://.import/pillar.gltf-53453748b595c56b9270a5a16b4e1ef6.scn" ]
 
 [params]
 

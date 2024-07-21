@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Xyl2.mp3-73aca14782f665e2e4502ecc0f7872d8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Xyl2.mp3"
+dest_files=[ "res://.import/Xyl2.mp3-73aca14782f665e2e4502ecc0f7872d8.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

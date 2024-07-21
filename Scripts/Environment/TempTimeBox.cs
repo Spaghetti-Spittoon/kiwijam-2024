@@ -51,9 +51,12 @@ public class TempTimeBox : StaticBody
 
     private void OnAreaCollision(Node body)
     {
-        if (!isPhasing)
+        if (body.GetType() == typeof(Player))
         {
-            isPhasing = true;
+            if (!isPhasing)
+            {
+                isPhasing = true;
+            }
         }
     }
 

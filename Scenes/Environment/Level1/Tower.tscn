@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Level1/tower.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Environment/TempTimeBox.cs" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.185104, 1.26076, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.132218, 1.25208, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1.06451, 0.142716, 1 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1.87107, 1.78082, 1.17494 )
+
+[node name="StaticBody4" type="StaticBody"]
+script = ExtResource( 2 )
+_flickerTime = 0.3
+
+[node name="Model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.02608, 0, 0, 0, 0.523176, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.800292, 0.59961, 0, -0.59961, 0.800292, 0, 0, 0, 1, -2.122, 1.177, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 0.8, -0.6, 0, 0.6, 0.8, 0, 0, 0, 1, 2.20898, 1.29905, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( 1.49608, 0, 0, 0, 1, 0, 0, 0, 0.880146, 0.103397, 2.18684, 0 )
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 0.783544, 0, 0, 0, 0.84643, 0, 0, 0, 1, 0, 0.0785241, 0 )
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00280042, 1.62427, 0 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Area" to="." method="OnAreaCollision"]
