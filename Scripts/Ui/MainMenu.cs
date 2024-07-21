@@ -27,6 +27,10 @@ public class MainMenu : CanvasLayer
 	}
 
 	void OnLevelsButton_Click() {
+		//hide buttons to prevent duplicate scenes
+		levelsButton.Visible = false;
+		continueButton.Visible = false;
+
 		var levelsMenu = (PackedScene)ResourceLoader.Load("res://Scenes/Ui/LevelsMenu.tscn");
 		var levelsInstance = levelsMenu.Instance();
 

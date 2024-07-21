@@ -23,6 +23,13 @@ public class PhotoPiece : Area {
         GD.Print("OnBodyEntered");
         QueueFree();
     }
+
+    public override void _PhysicsProcess(float delta)
+    {
+        var newTransform = Transform;
+        newTransform.basis = newTransform.basis.Rotated(Vector3.Up, 0.05f);
+        Transform = newTransform;
+    }
 }
 
 public enum PieceQuadrant {
